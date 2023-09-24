@@ -90,7 +90,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&rgb_ug RGB_TOG>,
+                = <&rgb_ug RGB_ON>,
                   <&to 4>;
         };
     };
