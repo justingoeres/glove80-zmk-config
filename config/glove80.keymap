@@ -90,12 +90,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&rgb_ug RGB_ON>,
+                = <&rgb_ug RGB_TOG>,
                   <&to 4>;
         };
 
         to_layer_0_rgb_off: to_layer_0_rgb_off {
-            label = "TO_LAYER_0_RGB_ON";
+            label = "TO_LAYER_0_RGB_OFF";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
