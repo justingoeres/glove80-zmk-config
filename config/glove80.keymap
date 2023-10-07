@@ -101,6 +101,17 @@
             bindings
                 = <&rgb_ug RGB_OFF>,
                   <&to 0>;
+        
+        ZMK_MACRO(Qu,
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp Q>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp U>
+                ;
+        )
+
         };
     };
 };
