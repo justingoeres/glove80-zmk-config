@@ -101,6 +101,17 @@
             bindings
                 = <&rgb_ug RGB_OFF>,
                   <&to 0>;
+        
+        ZMK_MACRO(Qu,
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp Q>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp U>
+                ;
+        )
+
         };
     };
 };
@@ -220,6 +231,10 @@ behaviors {
                         69 52       57 74                \
                          70 53     56 73                 \
                           71 54   55 72
+    
+
+    #define LINGER_KEYS_TAP_TERM 170
+                          
     //
     // Home row mod-tap keys for all except index fingers
     //
@@ -294,6 +309,15 @@ behaviors {
     };
 
 
+    lk_qu: lk_qu {
+        compatible = "zmk,behavior-hold-tap";
+        label = "lk_qu";
+        #binding-cells = <2>;
+        tapping-term-ms = <LINGER_KEYS_TAP_TERM>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&Qu>;
+    };
+
 };
 
 
@@ -310,7 +334,7 @@ behaviors {
             bindings = <
      &kp F1              &kp F2               &kp F3               &kp F4              &kp F5                                                                                                          &kp F6                &kp F7                &kp F8                       &kp F9    &kp F10
   &kp EQUAL              &kp N1               &kp N2               &kp N3              &kp N4  &kp N5                                                                             &kp N6               &kp N7                &kp N8                &kp N9                       &kp N0  &kp MINUS
-    &kp TAB               &kp Q                &kp W                &kp E               &kp R   &kp T                                                                              &kp Y                &kp U                 &kp I                 &kp O                        &kp P   &kp BSLH
+    &kp TAB               &lk_qu Q U          &kp W                &kp E               &kp R   &kp T                                                                              &kp Y                &kp U                 &kp I                 &kp O                        &kp P   &kp BSLH
     &kp ESC  &homey_left LALT A  &homey_left LCTRL S  &homey_left LSHFT D  &index_left LGUI F   &kp G                                                                              &kp H  &index_right RGUI J  &homey_right RSHFT K  &homey_right RCTRL L  &homey_right RALT SEMICOLON    &kp SQT
   &kp GRAVE               &kp Z                &kp X                &kp C               &kp V   &kp B  &tap_dance_caps_word  &kp LCTRL    &lower  &kp RALT  &kp RCTRL  &kp RSHFT   &kp N                &kp M             &kp COMMA               &kp DOT                     &kp FSLH  &kp PG_UP
  &magic 2 0            &kp HOME              &kp END             &kp LEFT           &kp RIGHT                      &kp BSPC   &kp LALT  &kp LGUI  &kp RGUI    &kp RET  &kp SPACE                       &kp UP              &kp DOWN              &kp LBKT                     &kp RBKT  &kp PG_DN
