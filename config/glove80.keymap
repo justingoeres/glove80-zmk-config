@@ -451,7 +451,7 @@ behaviors {
         layer_Cursor {
             bindings = <
     &none  &none    &none       &none       &none                                                                                             &none           &none           &none            &none    &none
-    &none  &none    &none       &none       &none       &none                                                                    &none        &none           &none           &none            &none    &none
+    &none  &none    &none       &none       &none       &none                                                                    &kp LG(Z)    &none           &none           &none            &none    &none
     &none  &none    &none       &none       &none       &none                                                                    &kp LG(X)    &kp DEL         &kp UP_ARROW    &kp BSPC         &none    &none
     &none  &kp LALT &kp LCTRL   &kp LSHFT   &kp LGUI    &none                                                                    &kp LG(C)    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none    &none
     &none  &none    &none       &none       &none       &none   &none  &none  &none                &none  &kp RALT &kp RSHFT     &kp LG(V)    &kp HOME        &kp PG_UP       &kp PG_DN        &kp END  &none
