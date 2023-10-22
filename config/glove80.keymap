@@ -212,7 +212,7 @@ behaviors {
     // activation for the symbol layer (if the tapped symbol key is released
     // while the thumb layer key is still held down) for quicker programming.
     //
-    #define THUMB_HOLDING_TYPE "balanced"
+    #define THUMB_HOLDING_TYPE "tap-preferred"
 
     //
     // THUMB_HOLDING_TIME defines how long you need to hold (milliseconds)
@@ -328,9 +328,9 @@ behaviors {
     thumb: miryoku_thumb_layer {
         compatible = "zmk,behavior-hold-tap";
         label = "MIRYOKU_THUMB_LAYER";
-        flavor = THUMB_HOLDING_TYPE;
-        tapping-term-ms = <THUMB_HOLDING_TIME>;
-        quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+        flavor = THUMB_HOLDING_TYPE; // balanced
+        tapping-term-ms = <THUMB_HOLDING_TIME>; // 200
+        quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat / 300
         //global-quick-tap; // no typing streak
         //retro-tap; // don't allow slow (hold-like) taps
         #binding-cells = <2>;
