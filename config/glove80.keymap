@@ -21,7 +21,7 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#include <build.number>
+#include "build.number"
 
 #define LAYER_Base    0
 #define LAYER_Lower   1
