@@ -122,6 +122,12 @@
                 , <&macro_tap &kp U>
                 ;
         )
+
+        ZMK_MACRO(caps_macro,
+            tap-ms = <200>;
+            bindings = <&kp CAPS>;
+        )
+    
     };
 };
 
@@ -328,13 +334,28 @@ behaviors {
     thumb: miryoku_thumb_layer {
         compatible = "zmk,behavior-hold-tap";
         label = "MIRYOKU_THUMB_LAYER";
-        flavor = THUMB_HOLDING_TYPE;
-        tapping-term-ms = <THUMB_HOLDING_TIME>;
-        quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+        flavor = THUMB_HOLDING_TYPE; // balanced
+        tapping-term-ms = <THUMB_HOLDING_TIME>; // 200
+        quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat / 300
         //global-quick-tap; // no typing streak
         //retro-tap; // don't allow slow (hold-like) taps
         #binding-cells = <2>;
         bindings = <&mo>, <&kp>;
+    };
+
+    //
+    // Thumb cluster hold-tap keys for Miryoku layers
+    // Special version just for use with CAPS
+    thumb_caps: miryoku_thumb_layer_caps {
+        compatible = "zmk,behavior-hold-tap";
+        label = "MIRYOKU_THUMB_LAYER";
+        flavor = THUMB_HOLDING_TYPE; // balanced
+        tapping-term-ms = <THUMB_HOLDING_TIME>; // 200
+        quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat / 300
+        //global-quick-tap; // no typing streak
+        //retro-tap; // don't allow slow (hold-like) taps
+        #binding-cells = <2>;
+        bindings = <&mo>, <&caps_macro>;
     };
 
 
@@ -406,7 +427,7 @@ behaviors {
     &kp EQUAL                          &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                                                                                                 &kp N6  &kp N7              &kp N8                  &kp N9                  &kp N0                      &kp MINUS
     &kp TAB                            &lk_qu Q U          &kp W               &kp E               &kp R               &kp T                                                                                                  &kp Y   &kp U               &kp I                   &kp O                   &kp P                       &kp BSLH
     &kp ESC                            &homey_left LALT A  &homey_left LCTRL S &homey_left LSHFT D &index_left LGUI F  &kp G                                                                                                  &kp H   &index_right RGUI J &homey_right RSHFT K    &homey_right RCTRL L    &homey_right RALT SEMICOLON &kp SQT
-    &kp GRAVE                          &kp Z               &kp X               &kp C               &kp V               &kp B   &tap_dance_caps_word    &kp LCTRL &thumb LAYER_Cursor CAPS   &kp RGUI  &kp RCTRL   &kp RSHFT   &kp N   &kp M               &kp COMMA               &kp DOT                 &kp FSLH                    &kp PG_UP
+    &kp GRAVE                          &kp Z               &kp X               &kp C               &kp V               &kp B   &tap_dance_caps_word    &kp LCTRL &thumb_caps LAYER_Cursor CAPS   &kp RGUI  &kp RCTRL   &kp RSHFT   &kp N   &kp M               &kp COMMA               &kp DOT                 &kp FSLH                    &kp PG_UP
     &magic LAYER_Magic LAYER_Base      &kp HOME            &kp END             &kp LEFT            &kp RIGHT                   &kp BSPC                &kp DEL   &lower                     &lower    &kp RET     &kp SPACE           &kp UP              &kp DOWN                &kp LBKT                &kp RBKT                    &kp PG_DN
             >;
         };
@@ -446,12 +467,12 @@ behaviors {
 
         layer_Cursor {
             bindings = <
-    &none                         &none    &none       &none       &none                                                                                             &none           &none           &none            &none    &none
-    &none                         &none    &none       &none       &none       &none                                                                    &kp LG(Z)    &none           &none           &none            &none    &none
-    &none                         &none    &none       &none       &none       &none                                                                    &kp LG(X)    &kp DEL         &kp UP_ARROW    &kp BSPC         &none    &none
-    &none                         &kp LALT &kp LCTRL   &kp LSHFT   &kp LGUI    &none                                                                    &kp LG(C)    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none    &none
-    &none                         &none    &none       &none       &none       &none   &none  &none  &none                &none  &kp RALT &kp RSHFT     &kp LG(V)    &kp HOME        &kp PG_UP       &kp PG_DN        &kp END  &none
-    &magic LAYER_Magic LAYER_Base  &none    &none       &none       &none               &none  &none  &to LAYER_Base       &none  &kp RET  &kp SPACE                  &none           &none           &none            &none    &none
+    &none                         &none    &none       &none       &none                                                                                             &none              &none           &none               &none    &none
+    &none                         &none    &none       &none       &none       &none                                                                    &kp LG(Z)    &kp LA(LEFT_ARROW) &none           &kp LA(RIGHT_ARROW) &none    &none
+    &none                         &none    &none       &none       &none       &none                                                                    &kp LG(X)    &kp DEL            &kp UP_ARROW    &kp BSPC            &none    &none
+    &none                         &kp LALT &kp LCTRL   &kp LSHFT   &kp LGUI    &none                                                                    &kp LG(C)    &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT_ARROW     &none    &none
+    &none                         &none    &none       &none       &none       &none   &none  &none  &none                &none  &kp RALT &kp RSHFT     &kp LG(V)    &kp HOME           &kp PG_UP       &kp PG_DN           &kp END  &none
+    &magic LAYER_Magic LAYER_Base &none    &none       &none       &none               &none  &none  &to LAYER_Base       &none  &kp RET  &kp SPACE                 &none              &none           &none               &none    &none
             >;
         };
 
@@ -462,7 +483,7 @@ behaviors {
     &kp NUMBER_2  &kp NUMBER_8  &kp NUMBER_4  &kp NUMBER_0  &kp NUMBER_6  &kp NUMBER_1                                                                                           &kp NUMBER_1  &kp NUMBER_6  &kp NUMBER_0  &kp NUMBER_4  &kp NUMBER_8  &kp NUMBER_2
     &kp NUMBER_3  &kp NUMBER_9  &kp NUMBER_5  &kp NUMBER_1  &kp NUMBER_7  &kp NUMBER_2                                                                                           &kp NUMBER_2  &kp NUMBER_7  &kp NUMBER_1  &kp NUMBER_5  &kp NUMBER_9  &kp NUMBER_3
     &kp NUMBER_4  &kp NUMBER_0  &kp NUMBER_6  &kp NUMBER_2  &kp NUMBER_8  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6       &kp NUMBER_6  &kp NUMBER_5  &kp NUMBER_4  &kp NUMBER_3  &kp NUMBER_8  &kp NUMBER_2  &kp NUMBER_6  &kp NUMBER_0  &kp NUMBER_4
-    &kp NUMBER_5  &kp NUMBER_1  &kp NUMBER_7  &kp NUMBER_3  &kp NUMBER_9                &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9       &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7                &kp NUMBER_9  &kp NUMBER_3  &kp NUMBER_7  &kp NUMBER_1  &kp NUMBER_5
+    &magic LAYER_Magic LAYER_Base  &kp NUMBER_1  &kp NUMBER_7  &kp NUMBER_3  &kp NUMBER_9                &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9       &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7                &kp NUMBER_9  &kp NUMBER_3  &kp NUMBER_7  &kp NUMBER_1  &kp NUMBER_5
             >;
         };
 
