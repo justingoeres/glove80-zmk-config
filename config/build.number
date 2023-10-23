@@ -1,1 +1,8 @@
-999
+{
+    macros {
+        ZMK_MACRO(build_number,
+            bindings = <&macro_tap &kp 9>;
+        )    
+    };
+};
+
