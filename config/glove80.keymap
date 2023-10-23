@@ -212,7 +212,7 @@ behaviors {
     // activation for the symbol layer (if the tapped symbol key is released
     // while the thumb layer key is still held down) for quicker programming.
     //
-    #define THUMB_HOLDING_TYPE "tap-preferred"
+    #define THUMB_HOLDING_TYPE "balanced"
 
     //
     // THUMB_HOLDING_TIME defines how long you need to hold (milliseconds)
@@ -406,7 +406,7 @@ behaviors {
     &kp EQUAL                          &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                                                                                                 &kp N6  &kp N7              &kp N8                  &kp N9                  &kp N0                      &kp MINUS
     &kp TAB                            &lk_qu Q U          &kp W               &kp E               &kp R               &kp T                                                                                                  &kp Y   &kp U               &kp I                   &kp O                   &kp P                       &kp BSLH
     &kp ESC                            &homey_left LALT A  &homey_left LCTRL S &homey_left LSHFT D &index_left LGUI F  &kp G                                                                                                  &kp H   &index_right RGUI J &homey_right RSHFT K    &homey_right RCTRL L    &homey_right RALT SEMICOLON &kp SQT
-    &kp GRAVE                          &kp Z               &kp X               &kp C               &kp V               &kp B   &tap_dance_caps_word    &kp LCTRL &thumb LAYER_Cursor CAPS   &kp RGUI  &kp RCTRL   &kp RSHFT   &kp N   &kp M               &kp COMMA               &kp DOT                 &kp FSLH                    &kp PG_UP
+    &kp GRAVE                          &kp Z               &kp X               &kp C               &kp V               &kp B   &tap_dance_caps_word    &kp LCTRL &thumb LAYER_Cursor T   &kp RGUI  &kp RCTRL   &kp RSHFT   &kp N   &kp M               &kp COMMA               &kp DOT                 &kp FSLH                    &kp PG_UP
     &magic LAYER_Magic LAYER_Base      &kp HOME            &kp END             &kp LEFT            &kp RIGHT                   &kp BSPC                &kp DEL   &lower                     &lower    &kp RET     &kp SPACE           &kp UP              &kp DOWN                &kp LBKT                &kp RBKT                    &kp PG_DN
             >;
         };
