@@ -10,8 +10,7 @@ jobs:
         run: |
           echo "GITHUB_RUN_NUMBER = ${{ github.run_number }}"
           echo "GITHUB_ATTEMPT_NUMBER = ${{ github.run_attempt}}"
-          echo "BRANCH_LEAF = `echo ${{ github.ref }} | sed 's/^.*\///'`"
-          echo "$BRANCH_LEAF"
+          echo "BRANCH_LEAF = `echo ${{ github.ref }} | sed 's/^.*\///'`" >> $GITHUB_ENV
       - uses: actions/checkout@v3
         with:
           submodules: recursive
@@ -34,5 +33,5 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v3
         with:
-          name: glove80-0.${{ github.run_number }}.${{ github.run_attempt }}.uf2
+          name: glove80-${{ env.BRANCH_LEAF }}-build-${{ github.run_number }}.${{ github.run_attempt }}.uf2
           path: glove80.uf2
