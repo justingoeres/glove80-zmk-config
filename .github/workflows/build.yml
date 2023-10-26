@@ -6,6 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: List some environment variables
+        run: |
+          echo "GITHUB_RUN_NUMBER = ${{ github.run_number }}"
+          echo "GITHUB_ATTEMPT_NUMBER = ${{ github.run_attempt}}"
       - uses: actions/checkout@v3
         with:
           submodules: recursive
