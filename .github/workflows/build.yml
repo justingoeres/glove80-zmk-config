@@ -11,9 +11,8 @@ jobs:
           echo "GITHUB_RUN_NUMBER = ${{ github.run_number }}"
           echo "GITHUB_ATTEMPT_NUMBER = ${{ github.run_attempt}}"
           echo "BRANCH_LEAF=`echo ${{ github.ref }} | sed 's/^.*\///'`" >> $GITHUB_ENV
-          echo "BUILD_OUTPUT_FILE=`echo glove80-${{ env.BRANCH_LEAF }}-build-${{ github.run_number }}.${{ github.run_attempt }}.uf2`" >> $GITHUB_ENV
-      - name: set up env var
-        run: echo "TAG=hello-world" >> $GITHUB_ENV
+      - name: Set output filename
+        run: echo "BUILD_OUTPUT_FILE=`echo glove80-${{ env.BRANCH_LEAF }}-build-${{ github.run_number }}.${{ github.run_attempt }}.uf2`" >> $GITHUB_ENV
       - name: use env var
         run: |
           echo ${{ env.TAG }}
