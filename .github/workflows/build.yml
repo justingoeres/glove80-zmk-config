@@ -10,6 +10,8 @@ jobs:
         run: |
           echo "GITHUB_RUN_NUMBER = ${{ github.run_number }}"
           echo "GITHUB_ATTEMPT_NUMBER = ${{ github.run_attempt}}"
+          echo "BRANCH_LEAF = `echo ${{ github.ref }} | sed 's/^.*\///'`"
+          echo "$BRANCH_LEAF"
       - uses: actions/checkout@v3
         with:
           submodules: recursive
