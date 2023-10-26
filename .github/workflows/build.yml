@@ -6,6 +6,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: List some environment variables
+        run: |
+          echo "GITHUB_RUN_NUMBER = ${{ github.run_number }}"
+          echo "GITHUB_ATTEMPT_NUMBER = ${{ github.run_attempt}}"
+          echo "BRANCH_LEAF=`echo ${{ github.ref }} | sed 's/^.*\///'`" >> $GITHUB_ENV
+      - name: Set output filename
+        run: echo "BUILD_OUTPUT_FILE=`echo glove80-${{ env.BRANCH_LEAF }}-build-${{ github.run_number }}.${{ github.run_attempt }}.uf2`" >> $GITHUB_ENV
+      - name: use env var
+        run: |
+          echo ${{ env.TAG }}
+          echo ${{ env.BRANCH_LEAF }}
+          echo ${{ env.BUILD_OUTPUT_FILE }}
       - uses: actions/checkout@v3
         with:
           submodules: recursive
@@ -24,9 +36,9 @@ jobs:
       - name: Build Glove80 combined firmware
         run: nix-build config -o combined
       - name: Copy result out of nix store
-        run: cp combined/glove80.uf2 glove80.uf2
+        run: cp combined/glove80.uf2 ${{ env.BUILD_OUTPUT_FILE }}
       - name: Upload result
         uses: actions/upload-artifact@v3
         with:
-          name: glove80.uf2
-          path: glove80.uf2
+          name: ${{ env.BUILD_OUTPUT_FILE }}
+          path: ${{ env.BUILD_OUTPUT_FILE }}
