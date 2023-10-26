@@ -29,12 +29,8 @@ jobs:
         run: nix-build config -o combined
       - name: Copy result out of nix store
         run: cp combined/glove80.uf2 glove80.uf2
-      - name: Generate artifact name
-        id: generate-name
-        run: |
-          echo "::set-output name=artifact::glove80.${{ github.ref_name }}.${{ github.run_id }}.zip"
       - name: Upload result
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ steps.generate-name.outputs.artifact }}
+          name: glove80-${{ github.run_number }}.${{ github.run_attempt }}.zip
           path: glove80.uf2
