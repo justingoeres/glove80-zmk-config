@@ -497,5 +497,17 @@ behaviors {
     &none  &none  &none  &none  &none         &none  &none  &none       &none  &none  &none         &none  &none  &none  &none  &none
             >;
         };
+
+    //     layer_Sunaku_Base {
+    //         bindings = <
+    // &kp F1        &kp F2                &kp F3               &kp F4               &kp F5                                                                                                                                                                &kp F6                &kp F7                &kp F8               &kp F9                 &kp F10
+    // &kp EQUAL     &kp N1                &kp N2               &kp N3               &kp N4                &kp N5                                                                                                                             &kp N6       &kp N7                &kp N8                &kp N9               &kp N0                 &kp BSLH
+    // &kp GRAVE     &kp B                 &homey_left RALT Y   &kp O                &kp U                 &kp SQT                                                                                                                            &kp SEMI     &kp L                 &kp D                 &homey_right RALT W  &kp V                  &kp Z
+    // &cappy        &homey_left LGUI C    &homey_left LALT I   &homey_left LCTRL E  &index_left LSHFT A   &kp COMMA                                                                                                                          &kp DOT      &index_right LSHFT H  &homey_right LCTRL T  &homey_right LALT S  &homey_right LGUI N    &kp Q
+    // &kp LSHFT     &kp G                 &kp X                &kp J                &kp K                 &kp MINUS           &thumb 5 ESC        &kp UP             &kp DOWN              &kp LEFT       &kp RIGHT       &thumb 8 ENTER     &kp FSLH     &kp R                 &kp M                 &kp F                &kp P                  &kp RSHFT
+    // &magic 2 0    &kp HOME              &kp PG_UP            &kp PG_DN            &kp END                                   &thumb 3 BACKSPACE  &thumb 4 DELETE    &lower                &lower         &thumb 7 TAB    &thumb 6 SPACE                  &parang_left          &kp LBKT              &kp RBKT             &parang_right          &magic 2 0
+    //         >;
+    //     };
+
     };
 };
