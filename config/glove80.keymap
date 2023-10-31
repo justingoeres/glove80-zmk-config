@@ -364,7 +364,7 @@ behaviors {
         label = "TAP_DANCE_CAPS_WORD";
         #binding-cells = <0>;
         tapping-term-ms = <200>;
-        bindings = <&kp LSHFT>, <&caps_word>;
+        bindings = <&caps_word>, <&kp CAPS>;
     };
 
     //
