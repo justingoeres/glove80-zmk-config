@@ -389,7 +389,7 @@ behaviors {
 
     td_cursor: tap_dance_layer_cursor {
     compatible = "zmk,behavior-tap-dance";
-    label = "LAYER_TAP_DANCE";
+    label = "LAYER_TAP_DANCE_CURSOR";
     #binding-cells = <0>;
     tapping-term-ms = <200>;
     bindings = <&mo LAYER_Cursor>, <&to LAYER_Cursor>;
