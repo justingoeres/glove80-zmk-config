@@ -392,7 +392,7 @@ behaviors {
     label = "LAYER_TAP_DANCE";
     #binding-cells = <0>;
     tapping-term-ms = <200>;
-    bindings = <&mo LAYER_Lower>, <&to LAYER_Lower>;
+    bindings = <&mo LAYER_Cursor>, <&to LAYER_Cursor>;
     };
 
 };
