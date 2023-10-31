@@ -27,6 +27,7 @@
 #define LAYER_Gaming  3
 #define LAYER_Cursor  4
 #define LAYER_Factory 5
+#define LAYER_MissionControl 6
 
 / {
     /* Glove80 system behavior & macros */
@@ -414,6 +415,7 @@ behaviors {
 // #define LAYER_Gaming  3
 // #define LAYER_Cursor  4
 // #define LAYER_Factory 5
+// #define LAYER_MissionControl 6
 
     /* Automatically generated keymap */
 / {
@@ -423,23 +425,23 @@ behaviors {
 
         layer_Base {
             bindings = <        
-    &kp F1                             &kp F2              &kp F3              &kp F4              &kp F5                                                                                                                                              &kp F6              &kp F7                  &kp F8                  &kp F9                      &kp F10
-    &kp EQUAL                          &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                                                                                                                  &kp N6  &kp N7              &kp N8                  &kp N9                  &kp N0                      &kp MINUS
-    &kp TAB                            &lk_qu Q U          &kp W               &kp E               &kp R               &kp T                                                                                                                   &kp Y   &kp U               &kp I                   &kp O                   &kp P                       &kp BSLH
-    &caps_word                         &homey_left LALT A  &homey_left LCTRL S &homey_left LSHFT D &index_left LGUI F  &kp G                                                                                                                   &kp H   &index_right RGUI J &homey_right RSHFT K    &homey_right RCTRL L    &homey_right RALT SEMICOLON &kp SQT
-    &kp GRAVE                          &kp Z               &kp X               &kp C               &kp V               &kp B   &homey_left LSHFT ESC   &kp LCTRL &thumb_caps LAYER_Cursor CAPS   &kp RGUI  &kp RCTRL   &homey_right RSHFT TAB  &kp N   &kp M               &kp COMMA               &kp DOT                 &kp FSLH                    &kp PG_UP
-    &magic LAYER_Magic LAYER_Base      &kp HOME            &kp END             &kp LEFT            &kp RIGHT                   &kp BSPC                &kp DEL   &lower                          &lower    &kp RET     &kp SPACE                       &kp UP              &kp DOWN                &kp LBKT                &kp RBKT                    &kp PG_DN
+    &kp F1                             &kp F2              &kp F3              &kp F4              &kp F5                                                                                                                                                             &kp F6              &kp F7                  &kp F8                  &kp F9                      &kp F10
+    &kp EQUAL                          &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                                                                                                                                 &kp N6  &kp N7              &kp N8                  &kp N9                  &kp N0                      &kp MINUS
+    &kp TAB                            &lk_qu Q U          &kp W               &kp E               &kp R               &kp T                                                                                                                                  &kp Y   &kp U               &kp I                   &kp O                   &kp P                       &kp BSLH
+    &tap_dance_caps_word               &homey_left LALT A  &homey_left LCTRL S &homey_left LSHFT D &index_left LGUI F  &kp G                                                                                                                                  &kp H   &index_right RGUI J &homey_right RSHFT K    &homey_right RCTRL L    &homey_right RALT SEMICOLON &kp SQT
+    &kp GRAVE                          &kp Z               &kp X               &kp C               &kp V               &kp B   &homey_left LSHFT ESC   &kp LCTRL &thumb_caps LAYER_Cursor CAPS   &kp RGUI  &mo LAYER_MissionControl   &homey_right RSHFT TAB  &kp N   &kp M               &kp COMMA               &kp DOT                 &kp FSLH                    &kp PG_UP
+    &magic LAYER_Magic LAYER_Base      &kp HOME            &kp END             &kp LEFT            &kp RIGHT                   &kp BSPC                &kp DEL   &lower                          &lower    &kp RET                    &kp SPACE                       &kp UP              &kp DOWN                &kp LBKT                &kp RBKT                    &kp PG_DN
             >;
         };
 
         layer_Lower {
             bindings = <
-    &kp C_BRI_DN                    &kp C_BRI_UP        &kp C_PREV            &kp C_NEXT          &kp C_PP                                                                                                                             &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &none           &kp PAUSE_BREAK
-    &trans                          &to 1               &to 2                 &to 3               &to 4                 &to 5                                                                               &kp LEFT_PARENTHESIS    &kp KP_NUM      &kp KP_EQUAL    &kp KP_SLASH    &kp KP_MULTIPLY &kp PRINTSCREEN
-    &trans                          &none               &none                 &kp UP_ARROW        &none                 &kp END                                                                                &kp RIGHT_PARENTHESIS   &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MINUS    &kp SCROLLLOCK
-    &trans                          &none               &kp LEFT_ARROW        &kp DOWN_ARROW      &kp RIGHT_ARROW       &kp PG_UP                                                                              &kp PERCENT             &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_PLUS     &none 
-    &trans                          &kp K_APP           &none                 &kp F11             &kp F12               &kp PG_DN   &trans  &trans  &tog LAYER_Cursor       &trans            &trans   &trans  &kp COMMA               &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_ENTER    &trans
-    &magic LAYER_Magic LAYER_Base   &kp CAPS            &kp INS               &kp F11             &kp F12                           &kp DEL &trans  &to LAYER_Base          &to LAYER_Base    &trans   &kp DEL                         &kp KP_N0       &kp KP_N0       &kp KP_DOT      &kp KP_ENTER    &trans
+    &kp C_BRI_DN                    &kp C_BRI_UP        &kp C_PREV            &kp C_NEXT          &kp C_PP                                                                                                                                                &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &none           &kp PAUSE_BREAK
+    &trans                          &to 1               &to 2                 &to 3               &to 4                 &to 5                                                                                                     &kp LEFT_PARENTHESIS    &kp KP_NUM      &kp KP_EQUAL    &kp KP_SLASH    &kp KP_MULTIPLY &kp PRINTSCREEN
+    &trans                          &none               &none                 &kp UP_ARROW        &none                 &kp END                                                                                                   &kp RIGHT_PARENTHESIS   &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MINUS    &kp SCROLLLOCK
+    &trans                          &none               &kp LEFT_ARROW        &kp DOWN_ARROW      &kp RIGHT_ARROW       &kp PG_UP                                                                                                 &kp PERCENT             &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_PLUS     &none 
+    &trans                          &kp K_APP           &none                 &kp F11             &kp F12               &kp PG_DN   &trans  &trans  &tog LAYER_Cursor       &trans            &tog LAYER_MissionControl   &trans  &kp COMMA               &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_ENTER    &trans
+    &magic LAYER_Magic LAYER_Base   &kp CAPS            &kp INS               &kp F11             &kp F12                           &kp DEL &trans  &to LAYER_Base          &to LAYER_Base    &trans                      &kp DEL                         &kp KP_N0       &kp KP_N0       &kp KP_DOT      &kp KP_ENTER    &trans
             >;
         };
 
@@ -476,6 +478,14 @@ behaviors {
             >;
         };
 
+        layer_MissionControl {
+            bindings = <
+    &none                         &none    &none       &none       &none                                                                                                     &none               &none               &none               &none    &none
+    &none                         &none    &none       &none       &none       &none                                                                             &trans      &trans              &none               &trans              &none    &none
+    &none                         &none    &none       &none       &none       &none                                                                             &trans      &trans              &kp RC(UP_ARROW)    &trans              &none    &none
+    &none                         &kp LALT &kp LCTRL   &kp LSHFT   &kp LGUI    &none                                                                             &trans      &kp RC(LEFT_ARROW)  &kp RC(DOWN_ARROW)  &kp RC(RIGHT_ARROW) &none    &none
+    &none                         &none    &none       &none       &none       &none   &none  &none  &none                &none           &kp RALT &kp RSHFT     &trans      &trans              &trans              &trans              &trans  &none
+    &magic LAYER_Magic LAYER_Base &none    &none       &none       &none               &none  &none  &to LAYER_Base       &to LAYER_Base  &kp RET  &kp SPACE                 &none               &none               &none               &none    &none
             >;
         };
 
