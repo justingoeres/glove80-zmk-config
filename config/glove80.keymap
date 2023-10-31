@@ -26,8 +26,8 @@
 #define LAYER_Magic   2
 #define LAYER_Gaming  3
 #define LAYER_Cursor  4
-#define LAYER_Factory 5
-#define LAYER_MissionControl 6
+#define LAYER_MissionControl 5
+#define LAYER_Factory 6
 
 / {
     /* Glove80 system behavior & macros */
@@ -414,8 +414,8 @@ behaviors {
 // #define LAYER_Magic   2
 // #define LAYER_Gaming  3
 // #define LAYER_Cursor  4
-// #define LAYER_Factory 5
-// #define LAYER_MissionControl 6
+// #define LAYER_MissionControl 5
+// #define LAYER_Factory 6
 
     /* Automatically generated keymap */
 / {
