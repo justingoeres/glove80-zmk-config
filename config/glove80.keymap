@@ -467,12 +467,15 @@ behaviors {
 
         layer_Cursor {
             bindings = <
-    &none                         &none    &none       &none       &none                                                                                             &none              &none           &none               &none    &none
-    &none                         &none    &none       &none       &none       &none                                                                    &kp LG(Z)    &kp LA(LEFT_ARROW) &none           &kp LA(RIGHT_ARROW) &none    &none
-    &none                         &none    &none       &none       &none       &none                                                                    &kp LG(X)    &kp DEL            &kp UP_ARROW    &kp BSPC            &none    &none
-    &none                         &kp LALT &kp LCTRL   &kp LSHFT   &kp LGUI    &none                                                                    &kp LG(C)    &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT_ARROW     &none    &none
-    &none                         &none    &none       &none       &none       &none   &none  &none  &none                &none  &kp RALT &kp RSHFT     &kp LG(V)    &kp HOME           &kp PG_UP       &kp PG_DN           &kp END  &none
-    &magic LAYER_Magic LAYER_Base &none    &none       &none       &none               &none  &none  &to LAYER_Base       &none  &kp RET  &kp SPACE                 &none              &none           &none               &none    &none
+    &none                         &none    &none       &none       &none                                                                                                      &none              &none           &none               &none    &none
+    &none                         &none    &none       &none       &none       &none                                                                             &kp LG(Z)    &kp LA(LEFT_ARROW) &none           &kp LA(RIGHT_ARROW) &none    &none
+    &none                         &none    &none       &none       &none       &none                                                                             &kp LG(X)    &kp DEL            &kp UP_ARROW    &kp BSPC            &none    &none
+    &none                         &kp LALT &kp LCTRL   &kp LSHFT   &kp LGUI    &none                                                                             &kp LG(C)    &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT_ARROW     &none    &none
+    &none                         &none    &none       &none       &none       &none   &none  &none  &none                &none           &kp RALT &kp RSHFT     &kp LG(V)    &kp HOME           &kp PG_UP       &kp PG_DN           &kp END  &none
+    &magic LAYER_Magic LAYER_Base &none    &none       &none       &none               &none  &none  &to LAYER_Base       &to LAYER_Base  &kp RET  &kp SPACE                 &none              &none           &none               &none    &none
+            >;
+        };
+
             >;
         };
 
