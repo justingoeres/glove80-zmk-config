@@ -13,7 +13,7 @@
  * edit it directly.
  */
 
-/* comment to trigger keymap-drawing */
+/* comment to trigger keymap-drawing  */
 
 #include <behaviors.dtsi>
 

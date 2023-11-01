@@ -40,4 +40,4 @@ jobs:
           name: ${{ env.BUILD_OUTPUT_FILE }}
           path: |
             ${{ env.BUILD_OUTPUT_FILE }}
-            keymap-drawer/glove80.svg
+            glove80.svg
