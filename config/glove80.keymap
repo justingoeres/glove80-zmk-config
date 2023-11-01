@@ -13,6 +13,8 @@
  * edit it directly.
  */
 
+/* comment to trigger keymap-drawing */
+
 #include <behaviors.dtsi>
 
 /* Include behaviour includes needed by key binds - automatically generated */
