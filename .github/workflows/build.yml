@@ -11,6 +11,10 @@ jobs:
           echo "BRANCH_LEAF=`echo ${{ github.ref }} | sed 's/^.*\///'`" >> $GITHUB_ENV
       - name: Configure the output filename
         run: echo "BUILD_OUTPUT_FILE=`echo glove80-${{ env.BRANCH_LEAF }}-build-${{ github.run_number }}.${{ github.run_attempt }}.uf2`" >> $GITHUB_ENV
+      - name: Debug env variables
+        run: |
+          echo "BRANCH_LEAF=$BRANCH_LEAF"
+          echo "BUILD_OUTPUT_FILE=$BUILD_OUTPUT_FILE"
       - uses: actions/checkout@v3
         with:
           submodules: recursive
@@ -34,4 +38,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.BUILD_OUTPUT_FILE }}
-          path: ${{ env.BUILD_OUTPUT_FILE }}
+          path: |
+            ${{ env.BUILD_OUTPUT_FILE }}
+            glove80.svg

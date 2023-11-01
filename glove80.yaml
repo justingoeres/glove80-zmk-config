@@ -1,0 +1,572 @@
+layout: {qmk_keyboard: glove80}
+layers:
+  Base:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - '='
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '-'
+  - TAB
+  - {t: '&Qu U', h: Q}
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - \
+  - '&tap_dance_caps_word'
+  - {t: A, h: LALT}
+  - {t: S, h: LCTRL}
+  - {t: D, h: LSHFT}
+  - {t: F, h: LGUI}
+  - G
+  - H
+  - {t: J, h: RGUI}
+  - {t: K, h: RSHFT}
+  - {t: L, h: RCTRL}
+  - {t: ;, h: RALT}
+  - ''''
+  - '`'
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - {t: ESC, h: LSHFT}
+  - {t: '&caps_macro CAPS', h: Cursor}
+  - LCTRL
+  - MissionControl
+  - '&td_cursor'
+  - {t: TAB, h: RSHFT}
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - PG UP
+  - {t: '&rgb_ug_status_macro', h: Magic}
+  - HOME
+  - END
+  - LEFT
+  - RIGHT
+  - BSPC
+  - DEL
+  - '&lower'
+  - '&lower'
+  - RET
+  - SPACE
+  - UP
+  - DOWN
+  - '['
+  - ']'
+  - PG DN
+  Lower:
+  - BRI DN
+  - BRI UP
+  - PREV
+  - NEXT
+  - PP
+  - MUTE
+  - VOL DN
+  - VOL UP
+  - ''
+  - PAUSE BREAK
+  - {t: ▽, type: trans}
+  - Lower
+  - Magic
+  - Gaming
+  - Cursor
+  - MissionControl
+  - (
+  - KP NUM
+  - KP EQUAL
+  - KP SLASH
+  - KP MULTIPLY
+  - PRINTSCREEN
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - UP ARROW
+  - ''
+  - END
+  - )
+  - KP 7
+  - KP 8
+  - KP 9
+  - KP MINUS
+  - SCROLLLOCK
+  - {t: ▽, type: trans}
+  - ''
+  - LEFT ARROW
+  - DOWN ARROW
+  - RIGHT ARROW
+  - PG UP
+  - '%'
+  - KP 4
+  - KP 5
+  - KP 6
+  - KP PLUS
+  - ''
+  - {t: ▽, type: trans}
+  - APP
+  - ''
+  - F11
+  - F12
+  - PG DN
+  - {t: ▽, type: trans}
+  - Cursor
+  - {t: ▽, type: trans}
+  - MissionControl
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ','
+  - KP 1
+  - KP 2
+  - KP 3
+  - KP ENTER
+  - {t: ▽, type: trans}
+  - {t: '&rgb_ug_status_macro', h: Magic}
+  - CAPS
+  - INS
+  - F11
+  - F12
+  - DEL
+  - {t: ▽, type: trans}
+  - Base
+  - Base
+  - {t: ▽, type: trans}
+  - DEL
+  - KP 0
+  - KP 0
+  - KP DOT
+  - KP ENTER
+  - {t: ▽, type: trans}
+  Magic:
+  - BT CLR
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - BT CLR ALL
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - RGB SPI
+  - RGB SAI
+  - RGB HUI
+  - RGB BRI
+  - RGB TOG
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bootloader'
+  - RGB SPD
+  - RGB SAD
+  - RGB HUD
+  - RGB BRD
+  - RGB EFF
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bootloader'
+  - '&sys_reset'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bt_2'
+  - '&bt_3'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&sys_reset'
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bt_0'
+  - '&bt_1'
+  - OUT USB
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Factory
+  Gaming:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - MUTE
+  - VOL DN
+  - VOL UP
+  - F9
+  - F10
+  - '='
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '-'
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - \
+  - ESC
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - '`'
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - LSHFT
+  - LCTRL
+  - LGUI
+  - RALT
+  - RCTRL
+  - RSHFT
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - PG UP
+  - {t: '&rgb_ug_status_macro', h: Magic}
+  - HOME
+  - END
+  - LEFT
+  - RIGHT
+  - BSPC
+  - LALT
+  - Base
+  - RGUI
+  - RET
+  - SPACE
+  - UP
+  - DOWN
+  - '['
+  - ']'
+  - PG DN
+  Cursor:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - LG(Z)
+  - LA(LEFT ARROW)
+  - ''
+  - LA(RIGHT ARROW)
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - LG(X)
+  - DEL
+  - UP ARROW
+  - BSPC
+  - ''
+  - ''
+  - ''
+  - LALT
+  - LCTRL
+  - LSHFT
+  - LGUI
+  - ''
+  - LG(C)
+  - LEFT ARROW
+  - DOWN ARROW
+  - RIGHT ARROW
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - RALT
+  - RSHFT
+  - LG(V)
+  - HOME
+  - PG UP
+  - PG DN
+  - END
+  - ''
+  - {t: '&rgb_ug_status_macro', h: Magic}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Base
+  - Base
+  - RET
+  - SPACE
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  MissionControl:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - RC(UP ARROW)
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - LALT
+  - LCTRL
+  - LSHFT
+  - LGUI
+  - ''
+  - {t: ▽, type: trans}
+  - RC(LEFT ARROW)
+  - RC(DOWN ARROW)
+  - RC(RIGHT ARROW)
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - RALT
+  - RSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - {t: '&rgb_ug_status_macro', h: Magic}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Base
+  - Base
+  - RET
+  - SPACE
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  Factory:
+  - '0'
+  - '6'
+  - '2'
+  - '8'
+  - '4'
+  - '4'
+  - '8'
+  - '2'
+  - '6'
+  - '0'
+  - '1'
+  - '7'
+  - '3'
+  - '9'
+  - '5'
+  - '0'
+  - '0'
+  - '5'
+  - '9'
+  - '3'
+  - '7'
+  - '1'
+  - '2'
+  - '8'
+  - '4'
+  - '0'
+  - '6'
+  - '1'
+  - '1'
+  - '6'
+  - '0'
+  - '4'
+  - '8'
+  - '2'
+  - '3'
+  - '9'
+  - '5'
+  - '1'
+  - '7'
+  - '2'
+  - '2'
+  - '7'
+  - '1'
+  - '5'
+  - '9'
+  - '3'
+  - '4'
+  - '0'
+  - '6'
+  - '2'
+  - '8'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '6'
+  - '5'
+  - '4'
+  - '3'
+  - '8'
+  - '2'
+  - '6'
+  - '0'
+  - '4'
+  - {t: '&rgb_ug_status_macro', h: Magic}
+  - '1'
+  - '7'
+  - '3'
+  - '9'
+  - '7'
+  - '8'
+  - '9'
+  - '9'
+  - '8'
+  - '7'
+  - '9'
+  - '3'
+  - '7'
+  - '1'
+  - '5'
+  Blank: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+    '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+    '', '']
