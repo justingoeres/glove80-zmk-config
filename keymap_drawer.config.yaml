@@ -217,7 +217,14 @@ parse_config:
     QUESTION: '?'
     QUES: '?'
   zmk_keycode_map:
-    LGUI: '%'
+    LGUI: $$tabler:command$$
+    LSHFT: $$tabler:arrow-big-up-filled$$
+    LCTRL: ^
+    RALT: $$mdi:apple-keyboard-option$$
+    RGUI: $$tabler:command$$
+    RSHFT: $$tabler:arrow-big-up-filled$$
+    RCTRL: ^
+    RALT: $$mdi:apple-keyboard-option$$
     AMPERSAND: '&'
     AMPS: '&'
     APOS: .
