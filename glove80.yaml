@@ -47,7 +47,7 @@ layers:
     - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:apple-keyboard-shift$$'}
     - {t: Cursor, h: '$$mdi:apple-keyboard-caps$$'}
     - $$mdi:apple-keyboard-control$$
-    - MissionControl
+    - Spaces
     - '&td_cursor'
     - {t: '$$mdi:keyboard-tab$$', h: '$$mdi:apple-keyboard-shift$$'}
     - N
@@ -88,7 +88,7 @@ layers:
     - Magic
     - Gaming
     - Cursor
-    - MissionControl
+    - Spaces
     - (
     - KP NUM
     - KP EQUAL
@@ -128,7 +128,7 @@ layers:
     - {t: '$$mdi:transfer$$', type: trans}
     - Cursor
     - {t: '$$mdi:transfer$$', type: trans}
-    - MissionControl
+    - Spaces
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: ',', s: <}
@@ -379,7 +379,7 @@ layers:
     - {t: '$$mdi:minus-circle-outline$$', type: none}
     - {t: '$$mdi:minus-circle-outline$$', type: none}
     - {t: '$$mdi:minus-circle-outline$$', type: none}
-  MissionControl:
+  Spaces:
   - - {t: '$$mdi:minus-circle-outline$$', type: none}
     - {t: '$$mdi:minus-circle-outline$$', type: none}
     - {t: '$$mdi:minus-circle-outline$$', type: none}

@@ -707,7 +707,7 @@ path.combo {
 </g>
 <g transform="translate(786, 570) rotate(-60.0)" class="key keypos-55">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 60%">MissionControl</tspan></text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 83%">Spaces</tspan></text>
 </g>
 <g transform="translate(840, 500) rotate(-45.0)" class="key keypos-56">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -884,7 +884,7 @@ path.combo {
 </g>
 <g transform="translate(440, 120)" class="key keypos-15">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 60%">MissionControl</tspan></text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 83%">Spaces</tspan></text>
 </g>
 <g transform="translate(1000, 120)" class="key keypos-16">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1072,7 +1072,7 @@ path.combo {
 </g>
 <g transform="translate(786, 570) rotate(-60.0)" class="key keypos-55">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 60%">MissionControl</tspan></text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 83%">Spaces</tspan></text>
 </g>
 <g transform="translate(840, 500) rotate(-45.0)" class="key trans keypos-56">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key trans"/>
@@ -2218,8 +2218,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(0, 3323)" class="layer-MissionControl">
-<text x="0" y="0" class="label">MissionControl</text>
+<g transform="translate(0, 3323)" class="layer-Spaces">
+<text x="0" y="0" class="label">Spaces</text>
 <g transform="translate(0, 0)">
 <g transform="translate(40, 80)" class="key none keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
