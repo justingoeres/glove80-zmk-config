@@ -358,19 +358,6 @@ draw_config:
       translate: 25px -25px;
     }
 
-    /* Home row mod keys */
-    .keypos-35,
-    .keypos-36,
-    .keypos-37,
-    .keypos-38,
-    .keypos-41,
-    .keypos-42,
-    .keypos-43,
-    .keypos-44 {
-        --color--key--bg: var(--color--material--blue-gray--100);
-        --color--key--border: var(--color--material--blue-gray--50);
-    }
-
     .keypos-50 {
         --color--key--bg: var(--color--material--red--300);
         --color--key--border: var(--color--material--red--200);
@@ -384,9 +371,47 @@ draw_config:
     .keypos-56,
     .keypos-71,
     .keypos-72 {
-        --color--key--bg: var(--color--material--teal--200);
-        --color--key--border: var(--color--material--teal--100);
+        --color--key--bg: var(--color--material--blue--200);
+        --color--key--border: var(--color--material--blue--100);
     }
+
+    /* BASE layer */
+    .layer-Base {
+        /* home row modifiers */
+        .keypos-35,
+        .keypos-36,
+        .keypos-37,
+        .keypos-38,
+        .keypos-41,
+        .keypos-42,
+        .keypos-43,
+        .keypos-44 {
+            --color--key--bg: var(--color--material--teal--200);
+            --color--key--border: var(--color--material--teal--100);
+        }
+    }
+
+    /* CURSOR layer */
+    .layer-Cursor {
+        /* arrow keys */
+        .keypos-30,
+        .keypos-41,
+        .keypos-42,
+        .keypos-43 {
+            --color--key--bg: var(--color--material--teal--200);
+            --color--key--border: var(--color--material--teal--100);
+        }
+
+        /* undo/cut/copy/paste keys */
+        .keypos-16,
+        .keypos-28,
+        .keypos-40,
+        .keypos-58 {
+            --color--key--bg: var(--color--material--purple--200);
+            --color--key--border: var(--color--material--purple--100;
+        }
+    }
+
 
 parse_config:
   mark_alternate_layer_activators: true
