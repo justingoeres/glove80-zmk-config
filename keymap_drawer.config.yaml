@@ -358,35 +358,61 @@ draw_config:
       translate: 25px -25px;
     }
 
-    /* Outer column + thumb keys */
-    .keypos-0,
-    .keypos-11,
-    .keypos-12,
-    .keypos-23,
-    .keypos-24,
-    .keypos-35,
-    .keypos-36,
-    .keypos-37,
-    .keypos-38,
-    .keypos-39,
-    .keypos-40,
-    .keypos-41 {
-        --color--key--bg: var(--color--material--blue-gray--100);
-        --color--key--border: var(--color--material--blue-gray--50);
-    }
-
-    .keypos-12 {
+    .keypos-50 {
         --color--key--bg: var(--color--material--red--300);
         --color--key--border: var(--color--material--red--200);
         --color--key--text--shifted: var(--color--key--text--tap);
         --color--key--text--hold: var(--color--key--text--tap);
     }
 
-    .keypos-23 {
-        --color--key--bg: var(--color--material--teal--200);
-        --color--key--border: var(--color--material--teal--100);
+    /* layer keys */
+    .keypos-53,
+    .keypos-55,
+    .keypos-56,
+    .keypos-71,
+    .keypos-72 {
+        --color--key--bg: var(--color--material--blue--200);
+        --color--key--border: var(--color--material--blue--100);
     }
-    
+
+    /* BASE layer */
+    .layer-Base {
+        /* home row modifiers */
+        .keypos-35,
+        .keypos-36,
+        .keypos-37,
+        .keypos-38,
+        .keypos-41,
+        .keypos-42,
+        .keypos-43,
+        .keypos-44 {
+            --color--key--bg: var(--color--material--teal--200);
+            --color--key--border: var(--color--material--teal--100);
+        }
+    }
+
+    /* CURSOR layer */
+    .layer-Cursor {
+        /* arrow keys */
+        .keypos-30,
+        .keypos-41,
+        .keypos-42,
+        .keypos-43 {
+            --color--key--bg: var(--color--material--teal--200);
+            --color--key--border: var(--color--material--teal--100);
+        }
+
+        /* undo/cut/copy/paste keys */
+        .keypos-16,
+        .keypos-28,
+        .keypos-40,
+        .keypos-58 {
+            --color--key--bg: var(--color--material--purple--200);
+            --color--key--border: var(--color--material--purple--100;
+        }
+    }
+
+
 parse_config:
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$
@@ -428,33 +454,29 @@ parse_config:
     "&bkspc_del":
       type: backspace
       tap: $$mdi:backspace$$
-      shifted: $$mdi:backspace-reverse-outline$$
+      shifted: $$mdi:backspace-reverse$$
 
     # Bluetooth
-    "&bt BT_SEL 0":
-      shifted: $$mdi:bluetooth-connect$$
-      tap: ""
+    "&bt_0":
+      tap: $$mdi:bluetooth-connect$$
       hold: 1
-    "&bt BT_SEL 1":
-      shifted: $$mdi:bluetooth-connect$$
-      tap: ""
+    "&bt_1":
+      tap: $$mdi:bluetooth-connect$$
       hold: 2
-    "&bt BT_SEL 2":
-      shifted: $$mdi:bluetooth-connect$$
-      tap: ""
+    "&bt_2":
+      tap: $$mdi:bluetooth-connect$$
       hold: 3
-    "&bt BT_SEL 3":
-      shifted: $$mdi:bluetooth-connect$$
-      tap: ""
+    "&bt_3":
+      tap: $$mdi:bluetooth-connect$$
       hold: 4
-    "&bt BT_SEL 4":
-      shifted: $$mdi:bluetooth-connect$$
-      tap: ""
+    "&bt_4":
+      tap: $$mdi:bluetooth-connect$$
       hold: 5
     "&out OUT_TOG":
       shifted: $$mdi:usb$$
       tap: $$mdi:toggle-switch$$
       hold: $$mdi:bluetooth$$
+    "&out OUT_USB": $$mdi:usb$$
 
     # Reset
     "&sys_reset":
@@ -474,6 +496,12 @@ parse_config:
     "&thumb_caps LAYER_Cursor CAPS":
       tap: "Cursor"
       hold: $$mdi:apple-keyboard-caps$$
+    "&td_cursor":
+      tap: Cursor
+      hold: $$mdi:lock$$
+    "&lower":
+      tap: Lower
+      hold: $$mdi:lock$$
 
   # ZMK
   zmk_keycode_map:
@@ -609,6 +637,38 @@ parse_config:
       tap: 0
       shifted: ")"
 
+
+    # Numpad
+    KP_N1:
+      tap: 1
+    KP_N2:
+      tap: 2
+    KP_N3:
+      tap: 3
+    KP_N4:
+      tap: 4
+    KP_N5:
+      tap: 5
+    KP_N6:
+      tap: 6
+    KP_N7:
+      tap: 7
+    KP_N8:
+      tap: 8
+    KP_N9:
+      tap: 9
+    KP_N0:
+      tap: 0
+    KP_NUM:
+      tap: $$mdi:lock$$
+    KP_EQUAL: "="
+    KP_PLUS: +
+    KP_MINUS: "-"
+    KP_MULTIPLY: "*"
+    KP_SLASH: "/"
+    KP_DOT: "."
+    KP_ENTER: "ENTER"
+
     # Modifiers
     LCTRL: $$mdi:apple-keyboard-control$$
     LALT: $$mdi:apple-keyboard-option$$
@@ -648,8 +708,8 @@ parse_config:
     BSPC:
       type: backspace
       tap: $$mdi:backspace$$
-    DELETE: $$mdi:backspace-reverse-outline$$
-    DEL: $$mdi:backspace-reverse-outline$$
+    DELETE: $$mdi:backspace-reverse$$
+    DEL: $$mdi:backspace-reverse$$
 
     # Locks
     CAPSLOCK: $$mdi:apple-keyboard-caps$$
@@ -667,6 +727,9 @@ parse_config:
 
     # Bluetooth
     BT_CLR: $$mdi:bluetooth-off$$
+    BT_CLR_ALL:
+        tap: $$mdi:bluetooth-off$$
+        hold: ALL
     BT_SEL: $$mdi:bluetooth-connect$$
 
     # Settings
@@ -685,6 +748,12 @@ parse_config:
     RG(RS(V)):
       tap: $$mdi:video$$
       hold: zoom
+
+    # Spaces / Exposé
+    RC(UP): $$mdi:arrow-up$$
+    RC(DOWN): $$mdi:monitor$$
+    RC(LEFT): $$mdi:arrow-left$$
+    RC(RIGHT): $$mdi:arrow-right$$
 
     # Operations
     LG(Z): $$mdi:undo$$

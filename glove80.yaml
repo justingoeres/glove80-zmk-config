@@ -57,7 +57,7 @@ layers:
   - {t: Cursor, h: '$$mdi:apple-keyboard-caps$$'}
   - $$mdi:apple-keyboard-control$$
   - Spaces
-  - '&td_cursor'
+  - {t: Cursor, h: '$$mdi:lock$$'}
   - {t: '$$mdi:keyboard-tab$$', h: '$$mdi:apple-keyboard-shift$$'}
   - N
   - M
@@ -71,9 +71,9 @@ layers:
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:backspace-reverse-outline$$
-  - '&lower'
-  - '&lower'
+  - $$mdi:backspace-reverse$$
+  - {t: Lower, h: '$$mdi:lock$$'}
+  - {t: Lower, h: '$$mdi:lock$$'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-up-bold$$
@@ -91,7 +91,7 @@ layers:
   - $$mdi:volume-low$$
   - $$mdi:volume-high$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - PAUSE BREAK
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - Lower
   - Magic
@@ -99,11 +99,11 @@ layers:
   - Cursor
   - Spaces
   - (
-  - KP NUM
-  - KP EQUAL
-  - KP SLASH
-  - KP MULTIPLY
-  - PRINTSCREEN
+  - $$mdi:lock$$
+  - '='
+  - /
+  - '*'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -111,11 +111,11 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - END
   - )
-  - KP 7
-  - KP 8
-  - KP 9
-  - KP MINUS
-  - SCROLLLOCK
+  - '7'
+  - '8'
+  - '9'
+  - '-'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:arrow-left-bold$$
@@ -123,10 +123,10 @@ layers:
   - $$mdi:arrow-right-bold$$
   - PG UP
   - '%'
-  - KP 4
-  - KP 5
-  - KP 6
-  - KP PLUS
+  - '4'
+  - '5'
+  - '6'
+  - +
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - APP
@@ -141,27 +141,27 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: ',', s: <}
-  - KP 1
-  - KP 2
-  - KP 3
-  - KP ENTER
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - ENTER
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:auto-fix$$
   - $$mdi:apple-keyboard-caps$$
   - INS
   - F11
   - F12
-  - $$mdi:backspace-reverse-outline$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - Base
   - Base
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:backspace-reverse-outline$$
-  - KP 0
-  - KP 0
-  - KP DOT
-  - KP ENTER
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:backspace-reverse$$
+  - '0'
+  - '0'
+  - .
+  - ENTER
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   Magic:
   - $$mdi:bluetooth-off$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -172,7 +172,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - BT CLR ALL
+  - {t: '$$mdi:bluetooth-off$$', h: ALL}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -215,8 +215,8 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&bt_2'
-  - '&bt_3'
+  - {t: '$$mdi:bluetooth-connect$$', h: '3'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '4'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -232,9 +232,9 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&bt_0'
-  - '&bt_1'
-  - OUT USB
+  - {t: '$$mdi:bluetooth-connect$$', h: '1'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '2'}
+  - $$mdi:usb$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -317,7 +317,7 @@ layers:
   - $$mdi:apple-keyboard-option$$
   - Base
   - $$mdi:apple-keyboard-command$$
-  - RET
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-down-bold$$
@@ -354,7 +354,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:content-cut$$
-  - $$mdi:backspace-reverse-outline$$
+  - $$mdi:backspace-reverse$$
   - $$mdi:arrow-up-bold$$
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -398,7 +398,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Base
   - Base
-  - RET
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -436,7 +436,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - RC(UP)
+  - $$mdi:arrow-up$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -447,9 +447,9 @@ layers:
   - $$mdi:apple-keyboard-command$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
-  - RC(LEFT)
-  - RC(DOWN)
-  - RC(RIGHT)
+  - $$mdi:arrow-left$$
+  - $$mdi:monitor$$
+  - $$mdi:arrow-right$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -479,7 +479,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Base
   - Base
-  - RET
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
