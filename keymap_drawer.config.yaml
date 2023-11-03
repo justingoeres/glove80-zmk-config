@@ -386,7 +386,7 @@ draw_config:
         --color--key--bg: var(--color--material--teal--200);
         --color--key--border: var(--color--material--teal--100);
     }
-    
+
 parse_config:
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$
@@ -428,7 +428,7 @@ parse_config:
     "&bkspc_del":
       type: backspace
       tap: $$mdi:backspace$$
-      shifted: $$mdi:backspace-reverse-outline$$
+      shifted: $$mdi:backspace-reverse$$
 
     # Bluetooth
     "&bt BT_SEL 0":
@@ -474,6 +474,12 @@ parse_config:
     "&thumb_caps LAYER_Cursor CAPS":
       tap: "Cursor"
       hold: $$mdi:apple-keyboard-caps$$
+    "&td_cursor":
+      tap: Cursor
+      hold: $$mdi:lock$$
+    "&lower":
+      tap: Lower
+      hold: $$mdi:lock$$
 
   # ZMK
   zmk_keycode_map:
@@ -648,8 +654,8 @@ parse_config:
     BSPC:
       type: backspace
       tap: $$mdi:backspace$$
-    DELETE: $$mdi:backspace-reverse-outline$$
-    DEL: $$mdi:backspace-reverse-outline$$
+    DELETE: $$mdi:backspace-reverse$$
+    DEL: $$mdi:backspace-reverse$$
 
     # Locks
     CAPSLOCK: $$mdi:apple-keyboard-caps$$
