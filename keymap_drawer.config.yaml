@@ -358,21 +358,61 @@ draw_config:
       translate: 25px -25px;
     }
 
+    /* random red key leftover from template */
+    /*
     .keypos-50 {
         --color--key--bg: var(--color--material--red--300);
         --color--key--border: var(--color--material--red--200);
         --color--key--text--shifted: var(--color--key--text--tap);
         --color--key--text--hold: var(--color--key--text--tap);
-    }
+    } 
+    */
+    
 
     /* layer keys */
-    .keypos-53,
-    .keypos-55,
-    .keypos-56,
-    .keypos-71,
-    .keypos-72 {
-        --color--key--bg: var(--color--material--blue--200);
-        --color--key--border: var(--color--material--blue--100);
+    .layer-Base,
+    .layer-Lower {
+        .keypos-53,
+        .keypos-55,
+        .keypos-56,
+        .keypos-71,
+        .keypos-72 {
+            --color--key--bg: var(--color--material--blue--200);
+            --color--key--border: var(--color--material--blue--100);
+        }
+    }
+
+    .layer-Cursor {
+        .keypos-53,
+        .keypos-55,
+        /* .keypos-56, */
+        .keypos-71,
+        .keypos-72 {
+            --color--key--bg: var(--color--material--blue--200);
+            --color--key--border: var(--color--material--blue--100);
+        }
+    }
+
+    .layer-Spaces {
+        /* .keypos-53, */
+        /* .keypos-55, */
+        /* .keypos-56, */
+        .keypos-71,
+        .keypos-72 {
+            --color--key--bg: var(--color--material--blue--200);
+            --color--key--border: var(--color--material--blue--100);
+        }
+    }
+
+    .layer-Gaming {
+        /* .keypos-53, */
+        /* .keypos-55, */
+        /* .keypos-56, */
+        .keypos-71
+        /* .keypos-72 */ {
+            --color--key--bg: var(--color--material--blue--200);
+            --color--key--border: var(--color--material--blue--100);
+        }
     }
 
     /* BASE layer */
@@ -409,6 +449,18 @@ draw_config:
         .keypos-58 {
             --color--key--bg: var(--color--material--purple--200);
             --color--key--border: var(--color--material--purple--100;
+        }
+    }
+
+    /* SPACES layer */
+    .layer-Spaces {
+        /* spaces arrow keys */
+        .keypos-30,
+        .keypos-41,
+        .keypos-42,
+        .keypos-43 {
+            --color--key--bg: var(--color--material--teal--200);
+            --color--key--border: var(--color--material--teal--100);
         }
     }
 
@@ -502,6 +554,40 @@ parse_config:
     "&lower":
       tap: Lower
       hold: $$mdi:lock$$
+
+    # RGB
+    "&rgb_ug RGB_SPI":
+      tap: $$mdi:lightbulb-on$$
+      hold: speed+
+    "&rgb_ug RGB_SAI":
+      tap: $$mdi:lightbulb-on$$
+      hold: sat+
+    "&rgb_ug RGB_HUI":
+      tap: $$mdi:lightbulb-on$$
+      hold: hue+
+    "&rgb_ug RGB_BRI":
+      tap: $$mdi:lightbulb-on$$
+      hold: bright+
+    "&rgb_ug RGB_TOG":
+      tap: $$mdi:lightbulb-on$$
+      hold: toggle
+
+    "&rgb_ug RGB_SPD":
+      tap: $$mdi:lightbulb$$
+      hold: speed-
+    "&rgb_ug RGB_SAD":
+      tap: $$mdi:lightbulb$$
+      hold: sat-
+    "&rgb_ug RGB_HUD":
+      tap: $$mdi:lightbulb$$
+      hold: hue-
+    "&rgb_ug RGB_BRD":
+      tap: $$mdi:lightbulb$$
+      hold: bright-
+    "&rgb_ug RGB_EFF":
+      tap: $$mdi:lightbulb$$
+      hold: effects
+
 
   # ZMK
   zmk_keycode_map:
