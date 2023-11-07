@@ -25,11 +25,11 @@
 
 #define LAYER_Base    0
 #define LAYER_Lower   1
-#define LAYER_Magic   2
-#define LAYER_Gaming  3
-#define LAYER_Cursor  4
-#define LAYER_Spaces      5
-#define LAYER_Factory 6
+#define LAYER_Cursor  2
+#define LAYER_Spaces  3
+#define LAYER_Gaming  4
+#define LAYER_Magic   5
+// #define LAYER_Factory 6
 
 / {
     /* Glove80 system behavior & macros */
@@ -172,7 +172,7 @@ behaviors {
     // after typing before you can use home row mods again.  It prevents
     // unintended activation of home row mods when you're actively typing.
     //
-    #define TYPING_STREAK_TERM 80 // global-quick-tap-ms
+    #define TYPING_STREAK_TERM 160 // global-quick-tap-ms
     //
     // KEY_REPEATING_TERM defines how much time you have left (milliseconds)
     // after tapping a key to hold it again in order to make it auto-repeat.
@@ -421,10 +421,10 @@ behaviors {
 /* My layers */
 // #define LAYER_Base    0
 // #define LAYER_Lower   1
-// #define LAYER_Magic   2
-// #define LAYER_Gaming  3
-// #define LAYER_Cursor  4
-// #define LAYER_Spaces      5
+// #define LAYER_Cursor  2
+// #define LAYER_Spaces  3
+// #define LAYER_Gaming  4
+// #define LAYER_Magic   5
 // #define LAYER_Factory 6
 
     /* Automatically generated keymap */
@@ -450,41 +450,19 @@ behaviors {
     &trans                          &to 1               &to 2                 &to 3               &to 4                 &to 5                                                                                                                                                                          &kp LEFT_PARENTHESIS    &kp KP_NUM      &kp KP_EQUAL    &kp KP_SLASH    &kp KP_MULTIPLY &none
     &trans                          &none               &none                 &kp UP              &none                 &kp END                                                                                                                                                                        &kp RIGHT_PARENTHESIS   &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MINUS    &none
     &trans                          &none               &kp LEFT              &kp DOWN            &kp RIGHT             &kp PG_UP                                                                                                                                                                      &kp PERCENT             &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_PLUS     &none 
-    &trans                          &kp K_APP           &none                 &kp F11             &kp F12               &kp PG_DN   &trans                  &tog LAYER_Cursor               &trans                      &tog LAYER_Spaces          &trans                      &trans                  &kp COMMA               &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_ENTER    &none
+    &trans                          &kp K_APP           &none                 &kp F11             &kp F12               &kp PG_DN   &trans                  &tog LAYER_Cursor               &trans                      &tog LAYER_Spaces          &tog LAYER_Cursor           &trans                  &kp COMMA               &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_ENTER    &none
     &magic LAYER_Magic LAYER_Base   &kp CAPS            &kp INS               &kp F11             &kp F12                           &trans                  &trans                          &to LAYER_Base              &to LAYER_Base             &trans                      &kp DEL                                         &kp KP_N0       &kp KP_N0       &kp KP_DOT      &kp KP_ENTER    &none
-            >;
-        };
-
-        layer_Magic {
-            bindings = <
-    &bt BT_CLR  &none            &none            &none            &none                                                                                            &none   &none   &none   &none   &bt BT_CLR_ALL
-    &none       &none            &none            &none            &none            &none                                                                           &none   &none   &none   &none   &none           &none 
-    &none       &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                 &none   &none   &none   &none   &none           &none 
-    &bootloader &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                 &none   &none   &none   &none   &none           &bootloader
-    &sys_reset  &none            &none            &none            &none            &none           &bt_2   &bt_3  &none                    &none   &none   &none   &none   &none   &none   &none   &none           &sys_reset
-    &none       &none            &none            &none            &none                            &bt_0   &bt_1  &out OUT_USB             &none   &none   &none           &none   &none   &none   &none           &to LAYER_Factory
-            >;
-        };
-
-        layer_Gaming {
-            bindings = <
-    &kp F1                         &kp F2      &kp F3   &kp F4    &kp F5                                                                                                             &kp C_MUTE  &kp C_VOL_DN    &kp C_VOL_UP    &kp F9          &kp F10
-    &kp EQUAL                      &kp N1      &kp N2   &kp N3    &kp N4       &kp N5                                                                                        &kp N6  &kp N7      &kp N8          &kp N9          &kp N0          &kp MINUS
-    &kp TAB                        &kp Q       &kp W    &kp E     &kp R        &kp T                                                                                         &kp Y   &kp U       &kp I           &kp O           &kp P           &kp BSLH
-    &kp ESC                        &kp A       &kp S    &kp D     &kp F        &kp G                                                                                         &kp H   &kp J       &kp K           &kp L           &kp SEMICOLON   &kp SQT
-    &kp GRAVE                      &kp Z       &kp X    &kp C     &kp V        &kp B   &kp LSHFT  &kp LCTRL    &kp LGUI               &kp RALT    &kp RCTRL     &kp RSHFT    &kp N   &kp M       &kp COMMA       &kp DOT         &kp FSLH        &kp PG_UP
-    &magic LAYER_Magic LAYER_Base  &kp HOME    &kp END  &kp LEFT  &kp RIGHT            &kp BSPC   &kp LALT     &to LAYER_Base         &kp RGUI    &kp ENTER     &kp SPACE            &kp UP      &kp DOWN        &kp LBKT        &kp RBKT        &kp PG_DN
             >;
         };
 
         layer_Cursor {
             bindings = <
-    &none                         &none    &none       &none       &none                                                                                                        &none              &none           &none               &none    &none
-    &none                         &none    &none       &none       &none       &none                                                                               &kp LG(Z)    &kp LA(LEFT)       &none           &kp LA(RIGHT)       &none    &none
-    &none                         &none    &none       &none       &none       &none                                                                               &kp LG(X)    &kp DEL            &kp UP          &kp BSPC            &none    &none
-    &none                         &kp LALT &kp LCTRL   &kp LSHFT   &kp LGUI    &none                                                                               &kp LG(C)    &kp LEFT           &kp DOWN        &kp RIGHT           &none    &none
-    &none                         &none    &none       &none       &none       &none   &none  &none  &none                &none           &kp RALT   &kp RSHFT     &kp LG(V)    &kp HOME           &kp PG_UP       &kp PG_DN           &kp END  &none
-    &magic LAYER_Magic LAYER_Base &none    &none       &none       &none               &none  &none  &to LAYER_Base       &to LAYER_Base  &kp ENTER  &kp SPACE                 &none              &none           &none               &none    &none
+    &none                         &none    &none       &none       &none                                                                                                         &none              &none           &none               &none    &none
+    &none                         &none    &none       &none       &none       &none                                                                                &kp LG(Z)    &kp LA(LEFT)       &none           &kp LA(RIGHT)       &none    &none
+    &none                         &none    &none       &none       &none       &none                                                                                &kp LG(X)    &kp DEL            &kp UP          &kp BSPC            &none    &none
+    &none                         &kp LALT &kp LCTRL   &kp LSHFT   &kp LGUI    &none                                                                                &kp LG(C)    &kp LEFT           &kp DOWN        &kp RIGHT           &none    &none
+    &none                         &none    &none       &none       &none       &none   &none  &none  &none                &mo LAYER_Spaces &kp RALT   &kp RSHFT     &kp LG(V)    &kp HOME           &kp PG_UP       &kp PG_DN           &kp END  &none
+    &magic LAYER_Magic LAYER_Base &none    &none       &none       &none               &none  &none  &to LAYER_Base       &to LAYER_Base   &kp ENTER  &kp SPACE                  &none              &none           &none               &none    &none
             >;
         };
 
@@ -499,7 +477,29 @@ behaviors {
             >;
         };
 
-        layer_Factory {
+        layer_Gaming {
+            bindings = <
+    &kp F1                         &kp F2      &kp F3   &kp F4    &kp F5                                                                                                              &kp C_MUTE  &kp C_VOL_DN    &kp C_VOL_UP    &kp F9          &kp F10
+    &kp EQUAL                      &kp N1      &kp N2   &kp N3    &kp N4       &kp N5                                                                                         &kp N6  &kp N7      &kp N8          &kp N9          &kp N0          &kp MINUS
+    &kp TAB                        &kp Q       &kp W    &kp E     &kp R        &kp T                                                                                          &kp Y   &kp U       &kp I           &kp O           &kp P           &kp BSPC
+    &kp ESC                        &kp A       &kp S    &kp D     &kp F        &kp G                                                                                          &kp H   &kp J       &kp K           &kp L           &kp SEMICOLON   &kp SQT
+    &kp GRAVE                      &kp Z       &kp X    &kp C     &kp V        &kp B   &kp LSHFT   &kp LCTRL    &kp LGUI               &kp RCTRL   &kp BSPC      &kp DEL      &kp N   &kp M       &kp COMMA       &kp DOT         &kp FSLH        &kp PG_UP
+    &magic LAYER_Magic LAYER_Base  &kp HOME    &kp END  &kp LEFT  &kp RIGHT            &kp SPACE   &kp LALT     &to LAYER_Base         &kp RGUI    &kp ENTER     &kp SPACE            &kp UP      &kp DOWN        &kp LBKT        &kp RBKT        &kp PG_DN
+            >;
+        };
+
+        layer_Magic {
+            bindings = <
+    &bt BT_CLR  &none            &none            &none            &none                                                                                            &none   &none   &none   &none   &bt BT_CLR_ALL
+    &none       &none            &none            &none            &none            &none                                                                           &none   &none   &none   &none   &none           &none 
+    &none       &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                 &none   &none   &none   &none   &none           &none 
+    &bootloader &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                 &none   &none   &none   &none   &none           &bootloader
+    &sys_reset  &none            &none            &none            &none            &none           &bt_2   &bt_3  &none                    &none   &none   &none   &none   &none   &none   &none   &none           &sys_reset
+    &none       &none            &none            &none            &none                            &bt_0   &bt_1  &out OUT_USB             &none   &none   &none           &none   &none   &none   &none           &none
+            >;
+        };
+
+/*        layer_Factory {
             bindings = <
     &kp NUMBER_0  &kp NUMBER_6  &kp NUMBER_2  &kp NUMBER_8  &kp NUMBER_4                                                                                                                       &kp NUMBER_4  &kp NUMBER_8  &kp NUMBER_2  &kp NUMBER_6  &kp NUMBER_0
     &kp NUMBER_1  &kp NUMBER_7  &kp NUMBER_3  &kp NUMBER_9  &kp NUMBER_5  &kp NUMBER_0                                                                                           &kp NUMBER_0  &kp NUMBER_5  &kp NUMBER_9  &kp NUMBER_3  &kp NUMBER_7  &kp NUMBER_1
@@ -509,6 +509,7 @@ behaviors {
     &magic LAYER_Magic LAYER_Base  &kp NUMBER_1  &kp NUMBER_7  &kp NUMBER_3  &kp NUMBER_9                &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9       &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7                &kp NUMBER_9  &kp NUMBER_3  &kp NUMBER_7  &kp NUMBER_1  &kp NUMBER_5
             >;
         };
+*/
 
 /*        layer_Blank {
             bindings = <
