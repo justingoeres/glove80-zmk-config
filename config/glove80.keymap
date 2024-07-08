@@ -491,15 +491,15 @@ behaviors {
 
         layer_LabVIEW {
             bindings = <
-    &trans &trans &trans &trans &trans                                                                                        &trans &trans    &trans &trans &trans
-    &trans &trans &trans &trans &trans &trans                                                                       &kp LG(Z) &trans &kp LG(E) &trans &trans &trans
-    &trans &trans &trans &trans &trans &trans                                                                       &kp LG(X) &trans &trans    &trans &trans &trans
-    &trans &trans &trans &trans &trans &trans                                                                       &kp LG(C) &trans &trans    &trans &trans &trans
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans                             &trans &trans &trans &kp LG(V) &trans &trans    &trans &trans &trans
-    &trans &trans &trans &trans &trans        &trans &trans &to LAYER_Base      &to LAYER_Base &trans &trans           &trans &trans    &trans &trans &trans
+    &trans &trans &trans &trans &trans                                                                                        &trans    &trans    &trans    &trans &trans
+    &trans &trans &trans &trans &trans &trans                                                                       &kp LG(Z) &kp LG(W) &kp LG(E) &kp LG(R) &trans &trans
+    &trans &trans &trans &trans &trans &trans                                                                       &kp LG(X) &trans    &trans    &trans    &trans &trans
+    &trans &trans &trans &trans &trans &trans                                                                       &kp LG(C) &trans    &trans    &trans    &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans                             &trans &trans &trans &kp LG(V) &trans    &trans    &trans    &trans &trans
+    &trans &trans &trans &trans &trans        &trans &trans &to LAYER_Base      &to LAYER_Base &trans &trans           &trans &trans    &trans    &trans    &trans
             >;
         };
-        
+
         layer_Magic {
             bindings = <
     &bt BT_CLR  &none            &none            &none            &none                                                                                            &none   &none   &none   &none   &bt BT_CLR_ALL
