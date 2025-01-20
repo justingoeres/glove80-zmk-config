@@ -391,11 +391,18 @@ behaviors {
     };
 
     td_cursor: tap_dance_layer_cursor {
-    compatible = "zmk,behavior-tap-dance";
-    label = "LAYER_TAP_DANCE_CURSOR";
-    #binding-cells = <0>;
-    tapping-term-ms = <200>;
-    bindings = <&mo LAYER_Cursor>, <&to LAYER_Cursor>;
+        compatible = "zmk,behavior-tap-dance";
+        label = "LAYER_TAP_DANCE_CURSOR";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&mo LAYER_Cursor>, <&to LAYER_Cursor>;
+    };
+
+    shift_spc_uscr: shift_spc_uscr {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp SPACE>, <&kp UNDERSCORE>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
 };
@@ -441,7 +448,7 @@ behaviors {
     &kp TAB                            &lk_qu Q U          &kp W               &kp E               &kp R               &kp T                                                                                                                                                                           &kp Y   &kp U               &kp I                   &kp O                   &kp P                       &kp BSLH
     &tap_dance_caps_word               &homey_left LALT A  &homey_left LCTRL S &homey_left LSHFT D &index_left LGUI F  &kp G                                                                                                                                                                           &kp H   &index_right RGUI J &homey_right RSHFT K    &homey_right RCTRL L    &homey_right RALT SEMICOLON &kp SQT
     &kp GRAVE                          &kp Z               &kp X               &kp C               &kp V               &kp B        &homey_left LSHFT ESC   &thumb_caps LAYER_Cursor CAPS   &kp LCTRL                   &mo LAYER_Spaces           &td_cursor                  &homey_right RSHFT TAB  &kp N   &kp M               &kp COMMA               &kp DOT                 &kp FSLH                    &kp PG_UP
-    &magic LAYER_Magic LAYER_Base      &kp HOME            &kp END             &kp LEFT            &kp RIGHT                        &kp BSPC                &kp DEL                         &lower                      &lower                     &kp ENTER                     &kp SPACE                       &kp UP              &kp DOWN                &kp LBKT                &kp RBKT                    &kp PG_DN
+    &magic LAYER_Magic LAYER_Base      &kp HOME            &kp END             &kp LEFT            &kp RIGHT                        &kp BSPC                &kp DEL                         &lower                      &lower                     &kp ENTER                   &shift_spc_uscr                 &kp UP              &kp DOWN                &kp LBKT                &kp RBKT                    &kp PG_DN
             >;
         };
 
