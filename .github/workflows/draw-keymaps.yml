@@ -6,6 +6,7 @@ on:
   pull_request:       # triggered on pull request to main
     types:
       - opened
+      - synchronize
     branches:
       - 'main'
     paths:
