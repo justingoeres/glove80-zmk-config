@@ -28,8 +28,9 @@
 #define LAYER_Cursor  2
 #define LAYER_Spaces  3
 #define LAYER_Gaming  4
-#define LAYER_Magic   5
-// #define LAYER_Factory 6
+#define LAYER_LabVIEW 5
+#define LAYER_Magic   6
+// #define LAYER_Factory 7
 
 / {
     /* Glove80 system behavior & macros */
@@ -446,12 +447,12 @@ behaviors {
 
         layer_Lower {
             bindings = <
-    &kp C_BRI_DN                    &kp C_BRI_UP        &kp C_PREV            &kp C_NEXT          &kp C_PP                                                                                                                                                                                                                     &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &none           &none
-    &trans                          &to 1               &to 2                 &to 3               &to 4                 &to 5                                                                                                                                                                          &kp LEFT_PARENTHESIS    &kp KP_NUM      &kp KP_EQUAL    &kp KP_SLASH    &kp KP_MULTIPLY &none
-    &trans                          &none               &none                 &kp UP              &none                 &kp END                                                                                                                                                                        &kp RIGHT_PARENTHESIS   &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MINUS    &none
-    &trans                          &none               &kp LEFT              &kp DOWN            &kp RIGHT             &kp PG_UP                                                                                                                                                                      &kp PERCENT             &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_PLUS     &none 
-    &trans                          &kp K_APP           &none                 &kp F11             &kp F12               &kp PG_DN   &trans                  &tog LAYER_Cursor               &trans                      &tog LAYER_Spaces          &tog LAYER_Cursor           &trans                  &kp COMMA               &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_ENTER    &none
-    &magic LAYER_Magic LAYER_Base   &kp CAPS            &kp INS               &kp F11             &kp F12                           &trans                  &trans                          &to LAYER_Base              &to LAYER_Base             &trans                      &kp DEL                                         &kp KP_N0       &kp KP_N0       &kp KP_DOT      &kp KP_ENTER    &none
+    &kp C_BRI_DN                    &kp C_BRI_UP        &kp C_PREV            &kp C_NEXT          &kp C_PP                                                                                                                                                                                                                     &kp C_MUTE           &kp C_VOL_DN    &kp C_VOL_UP    &none           &none
+    &trans                          &to 1               &to 2                 &to 3               &to 4                 &to 5                                                                                                                                                                          &kp LEFT_PARENTHESIS    &to LAYER_LabVIEW   &kp KP_EQUAL    &kp KP_SLASH    &kp KP_MULTIPLY &none
+    &trans                          &none               &none                 &kp UP              &none                 &kp END                                                                                                                                                                        &kp RIGHT_PARENTHESIS   &kp KP_N7            &kp KP_N8       &kp KP_N9       &kp KP_MINUS    &none
+    &trans                          &none               &kp LEFT              &kp DOWN            &kp RIGHT             &kp PG_UP                                                                                                                                                                      &kp PERCENT             &kp KP_N4            &kp KP_N5       &kp KP_N6       &kp KP_PLUS     &none 
+    &trans                          &kp K_APP           &none                 &kp F11             &kp F12               &kp PG_DN   &trans                  &tog LAYER_Cursor               &trans                      &tog LAYER_Spaces          &tog LAYER_Cursor           &trans                  &kp COMMA               &kp KP_N1            &kp KP_N2       &kp KP_N3       &kp KP_ENTER    &none
+    &magic LAYER_Magic LAYER_Base   &kp CAPS            &kp INS               &kp F11             &kp F12                           &trans                  &trans                          &to LAYER_Base              &to LAYER_Base             &trans                      &kp DEL                                         &kp KP_N0            &kp KP_N0       &kp KP_DOT      &kp KP_ENTER    &none
             >;
         };
 
@@ -488,6 +489,17 @@ behaviors {
             >;
         };
 
+        layer_LabVIEW {
+            bindings = <
+    &trans &trans &trans &trans &trans                                                                                        &trans    &trans    &trans    &trans &trans
+    &trans &trans &trans &trans &trans &trans                                                                       &kp LG(Z) &kp LG(W) &kp LG(E) &kp LG(R) &trans &trans
+    &trans &trans &trans &trans &trans &trans                                                                       &kp LG(X) &trans    &trans    &trans    &trans &trans
+    &trans &trans &trans &trans &trans &trans                                                                       &kp LG(C) &trans    &trans    &trans    &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans                             &trans &trans &trans &kp LG(V) &trans    &trans    &trans    &trans &trans
+    &trans &trans &trans &trans &trans        &trans &trans &to LAYER_Base      &to LAYER_Base &trans &trans           &trans &trans    &trans    &trans    &trans
+            >;
+        };
+
         layer_Magic {
             bindings = <
     &bt BT_CLR  &none            &none            &none            &none                                                                                            &none   &none   &none   &none   &bt BT_CLR_ALL
@@ -519,6 +531,18 @@ behaviors {
     &none  &none  &none  &none  &none  &none                                                 &none  &none  &none  &none  &none  &none
     &none  &none  &none  &none  &none  &none  &none  &none  &none       &none  &none  &none  &none  &none  &none  &none  &none  &none
     &none  &none  &none  &none  &none         &none  &none  &none       &none  &none  &none         &none  &none  &none  &none  &none
+            >;
+        };
+*/
+
+/*        layer_Trans {
+            bindings = <
+    &trans &trans &trans &trans &trans                                                              &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &trans &trans                                                &trans &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &trans &trans                                                &trans &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &trans &trans                                                &trans &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &trans        &trans &trans &trans      &trans &trans &trans        &trans &trans &trans &trans &trans
             >;
         };
 */
