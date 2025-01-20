@@ -6,6 +6,7 @@ on:
   pull_request:       # triggered on pull request to main
     types:
       - opened
+      - synchronize
     branches:
       - 'main'
     paths:
@@ -25,3 +26,4 @@ jobs:
       output_folder: "."            # path to save produced SVG and keymap YAML files
       parse_args: ""  # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
       draw_args: ""   # map of extra args to pass to `keymap draw`, e.g. "corne:'-k corne_rotated' cradio:'-k paroxysm'
+      west_config_path: ""  # set to empty to skip fetch west modules
