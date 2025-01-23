@@ -27,17 +27,11 @@
 <svg id="mdi:arrow-left-bold">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-arrow-left-bold" viewBox="0 0 24 24"><path d="M20,9V15H12V19.84L4.16,12L12,4.16V9H20Z" /></svg>
 </svg>
-<svg id="mdi:arrow-left-bold-outline">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-arrow-left-bold-outline" viewBox="0 0 24 24"><path d="M13,22L3,12L13,2V8H21V16H13V22M6,12L11,17V14H19V10H11V7L6,12Z" /></svg>
-</svg>
 <svg id="mdi:arrow-right">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-arrow-right" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
 </svg>
 <svg id="mdi:arrow-right-bold">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-arrow-right-bold" viewBox="0 0 24 24"><path d="M4,15V9H12V4.16L19.84,12L12,19.84V15H4Z" /></svg>
-</svg>
-<svg id="mdi:arrow-right-bold-outline">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-arrow-right-bold-outline" viewBox="0 0 24 24"><path d="M11,16H3V8H11V2L21,12L11,22V16M13,7V10H5V14H13V17L18,12L13,7Z" /></svg>
 </svg>
 <svg id="mdi:arrow-up">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-arrow-up" viewBox="0 0 24 24"><path d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z" /></svg>
@@ -1351,11 +1345,11 @@ path.combo {
 </g>
 <g transform="translate(1000, 120)" class="key keypos-16">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:undo" xlink:href="#mdi:undo" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:undo"/>
+<text x="0" y="0" class="key tap">Ctl+Z</text>
 </g>
 <g transform="translate(1080, 120)" class="key keypos-17">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:arrow-left-bold-outline" xlink:href="#mdi:arrow-left-bold-outline" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:arrow-left-bold-outline"/>
+<use href="#mdi:arrow-left-bold" xlink:href="#mdi:arrow-left-bold" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:arrow-left-bold"/>
 </g>
 <g transform="translate(1160, 120)" class="key none keypos-18">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -1363,7 +1357,7 @@ path.combo {
 </g>
 <g transform="translate(1240, 120)" class="key keypos-19">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:arrow-right-bold-outline" xlink:href="#mdi:arrow-right-bold-outline" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:arrow-right-bold-outline"/>
+<use href="#mdi:arrow-right-bold" xlink:href="#mdi:arrow-right-bold" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:arrow-right-bold"/>
 </g>
 <g transform="translate(1320, 160)" class="key none keypos-20">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -1399,7 +1393,7 @@ path.combo {
 </g>
 <g transform="translate(1000, 200)" class="key keypos-28">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:content-cut" xlink:href="#mdi:content-cut" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:content-cut"/>
+<text x="0" y="0" class="key tap">Ctl+X</text>
 </g>
 <g transform="translate(1080, 200)" class="key keypos-29">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1447,7 +1441,7 @@ path.combo {
 </g>
 <g transform="translate(1000, 280)" class="key keypos-40">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:content-copy" xlink:href="#mdi:content-copy" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:content-copy"/>
+<text x="0" y="0" class="key tap">Ctl+C</text>
 </g>
 <g transform="translate(1080, 280)" class="key keypos-41">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1520,7 +1514,7 @@ path.combo {
 </g>
 <g transform="translate(1000, 360)" class="key keypos-58">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:content-paste" xlink:href="#mdi:content-paste" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:content-paste"/>
+<text x="0" y="0" class="key tap">Ctl+V</text>
 </g>
 <g transform="translate(1080, 360)" class="key keypos-59">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
