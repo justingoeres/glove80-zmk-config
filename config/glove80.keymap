@@ -402,7 +402,7 @@ behaviors {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp SPACE>, <&kp UNDERSCORE>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
+        mods = <(MOD_LSFT)>;    // only left shift to hopefully reduce accidental activations
     };
 
 };
