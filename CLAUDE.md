@@ -154,6 +154,10 @@ Branch prefixes observed in history (use these — don't invent new ones):
 - `bugfix/<kebab-case-topic>` — for fixing broken behavior. Example: `bugfix/lower-not-working`.
 - `develop` — exists on the remote but is dormant; merges go directly from `feature/*` to `main`. Don't branch from `develop`.
 
+### Tagging
+
+Every notable change merged to `main` gets a sequential tag of the form **`v<N>-<kebab-case-topic>`** — the topic typically matches the branch name with the prefix dropped. Sequence is monotonic across the whole repo (not per-feature), so check `git tag --list | sort -V` to find the next number. Examples: `v1-hello-glove`, `v3-cursor-layer`, `v7-lower-bugfix`, `v12-shift-space-underscore`, `v13-cursor-layer-ubuntu`. Suggest the tag name when finishing a branch and offer to create it after merge.
+
 A few naming-convention notes that come from reading the keymap, not the branches:
 
 - **Behavior identifiers in `behaviors { }`** are `snake_case` and prefixed by what they do: `homey_*`, `index_*`, `thumb*`, `td_*` (tap-dance), `lk_*` (linger), `magic`, `shift_spc_uscr`. The `miryoku_*` labels in `label = "..."` are descriptive only — match them when adding new behaviors in the same family.
