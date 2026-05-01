@@ -23,6 +23,18 @@ There is no local build target. Two GitHub Actions workflows handle everything:
 
 If you need to reproduce the firmware build locally, you need Nix and the `moergo-sc/zmk` repo cloned alongside as `src/`; then `nix-build config -o combined`. This is rarely worth doing — push and let CI build.
 
+### Monitoring & fetching the build artifact
+
+`gh` is installed and authenticated. After a push, **proactively** offer to monitor the run and pull the artifact down so the maintainer doesn't have to click through the Actions UI:
+
+```
+gh run list --branch <branch> --workflow build.yml --limit 1 --json databaseId,status,conclusion,headSha
+gh run watch <run-id> --exit-status        # blocks until completion, non-zero on failure
+gh run download <run-id> --dir ./builds/   # pulls the glove80-<branch>-build-<n>.<m>.uf2 artifact
+```
+
+Workflow: push → poll until a run appears for the new SHA → `watch` it → if green, download into `./builds/` and report the file path. If red, fetch the failing job's log (`gh run view <run-id> --log-failed`) and surface the relevant lines. Don't ask the maintainer to babysit the Actions tab.
+
 ## Architecture
 
 ### `config/glove80.keymap` is the only file most edits touch
