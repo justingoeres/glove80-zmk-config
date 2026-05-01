@@ -1,37 +1,57 @@
-# MoErgo Glove80 Custom Configuration for ZMK
+# Glove80 ZMK Config (personal fork)
 
-![MoErgo Logo](moergo_logo.png)
+![MoErgo Glove80](moergo_logo.png)
 
-This repo is the official ZMK configuration of the MoErgo Glove80 wireless split contoured keyboard. Use it to develop your own keymap and easily build your own ZMK firmware to run on your Glove80.
+A personal ZMK firmware configuration for the [MoErgo Glove80](https://www.moergo.com/) wireless split contoured keyboard.
 
-**NOTE: You can also customize the layout of your Glove80 keyboard with the Glove80 Layout Editor webapp. For most users Glove80 Layout Editor is the recommended and simpler option. More information is available at the official MoErgo Glove80 Support site (see resources below).**
+This repo was originally forked from MoErgo's official template, [`moergo-sc/glove80-zmk-config`](https://github.com/moergo-sc/glove80-zmk-config) — full credit to MoErgo for the template, the Glove80 ZMK distribution ([`moergo-sc/zmk`](https://github.com/moergo-sc/zmk)), and the original `glove80.keymap`. Home-row-mod ideas are adapted from [Sunaku's Glove80 layout](https://sunaku.github.io/moergo-glove80-keyboard.html).
 
-These steps will get you using your keymap on your keyboard in the fastest time possible. It uses the GitHub Actions feature to build your firmware online.
+If you're looking for a clean starting template, **use the upstream repo, not this one** — fork [`moergo-sc/glove80-zmk-config`](https://github.com/moergo-sc/glove80-zmk-config) instead.
 
-If you are looking to dig deeper into ZMK and develop new functionality, it is recommended to follow the steps of installing ZMK as found on the official ZMK documentation site (linked below).
+## What's in this fork
+
+- **`config/glove80.keymap`** — the source of truth. Devicetree-format keymap with the layers and custom behaviors below.
+- **`glove80.svg`** — auto-rendered visual of the current keymap. View it on [the GitHub page](./glove80.svg) for a per-layer breakdown.
+- GitHub Actions for building firmware (`.github/workflows/build.yml`) and re-rendering the keymap drawing on PR (`.github/workflows/draw-keymaps.yml`).
+
+### Layers
+
+| #   | Name      | What it does                                                                                       |
+| --- | --------- | -------------------------------------------------------------------------------------------------- |
+| 0   | `Base`    | QWERTY with Miryoku-style home-row mods, linger-Q→qu, tap-dance caps-word, shift+space→underscore. |
+| 1   | `Lower`   | Numpad, F-keys, media controls, layer-jumps.                                                       |
+| 2   | `Cursor`  | Vim-ish nav cluster + Cmd-based clipboard / line-jump shortcuts (macOS).                           |
+| 3   | `Spaces`  | OS workspace / virtual-desktop switching.                                                          |
+| 4   | `Gaming`  | Plain QWERTY without home-row mods.                                                                |
+| 5   | `LabVIEW` | LabVIEW-specific shortcuts.                                                                        |
+| 6   | `Magic`   | System layer — Bluetooth profiles, RGB underglow, USB output, bootloader, sys-reset.               |
+
+### Notable customizations vs. upstream default
+
+- Miryoku-style home-row mods (`homey_*` for ALT/CTRL/GUI, `index_*` for SHIFT) tuned with a typing-streak guard to avoid accidental mod activation while typing fast.
+- A "linger" tap-dance on Q that types `qu` when tapped quickly.
+- Shift+Space (left-shift only) sends underscore.
+- Tap-dances on the layer keys: tap = momentary, double-tap = sticky.
+- A two-step magic key (hold for the system layer, tap for an RGB-underglow status indicator).
+
+## Building & flashing
+
+Builds run automatically on every push. To get a firmware UF2:
+
+1. Push to this repo (or open a PR).
+2. Open the [Actions tab](../../actions) → most recent **Build** run → **Artifacts** → download the `.uf2`.
+3. Put each half of the Glove80 into bootloader mode (Magic + the bootloader key, or hold the bootloader chord while powering on — slow pulsing red LED confirms).
+4. Copy the `.uf2` onto the mass-storage drive that appears. Repeat for the other half.
+
+For full flashing details and the bootloader fallback procedure, see MoErgo's [Customizing key layout & loading firmware](https://docs.moergo.com/glove80-user-guide/customizing-key-layout/) guide.
 
 ## Resources
-- The [official MoErgo Glove80 Support](https://moergo.com/glove80-support) web site. Glove80 documentation and other technical resources.
-- The [official MoErgo Discord Server](https://moergo.com/discord). Instant conversations with other Glove80 users.
 
-- The [official ZMK Documentation](https://zmk.dev/docs) web site. Find the answers to many of your questions about ZMK Firmware.
-- The [official ZMK Discord Server](https://discord.gg/8cfMkQksSB). Instant conversations with other ZMK developers and users. Great technical resource!
+- [MoErgo Glove80 documentation](https://docs.moergo.com/) — official user guide
+- [ZMK documentation](https://zmk.dev/docs) — firmware, behaviors, devicetree reference
+- [`moergo-sc/zmk`](https://github.com/moergo-sc/zmk) — Glove80's ZMK distribution
+- [keymap-drawer](https://github.com/caksoylar/keymap-drawer) — what generates `glove80.svg`
 
-- The [official Glove80 ZMK Distribution](https://github.com/moergo-sc/zmk). Repositiory for ZMK firmware customized for Glove80. 
- 
-## Instructions
-1. Log into, or sign up for, your personal GitHub account.
-2. Create your own repository using this repository as a template ([instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)) and check it out on your local computer.
-3. Edit the keymap file(s) to suit your needs
-4. Commit and push your changes to your personal repo. Upon pushing it, GitHub Actions will start building a new version of your firmware with the updated keymap.
+## License
 
-## Firmware Files
-To locate your firmware files and reflash your Glove80...
-1. log into GitHub and navigate to your personal config repository you just uploaded your keymap changes to.
-2. Click "Actions" in the main navigation, and in the left navigation click the "Build" link.
-3. Select the desired workflow run in the centre area of the page (based on date and time of the build you wish to use). You can also start a new build from this page by clicking the "Run workflow" button.
-4. After clicking the desired workflow run, you should be presented with a section at the bottom of the page called "Artifacts". This section contains the results of your build, in a file called "glove80.uf2"
-5. Download the glove80.uf2
-6. Flash the firmware to Glove80 according to the user documentation on the official Glove80 Glove80 Support website (linked above)
-
-Your keyboard is now ready to use.
+MIT — see [LICENSE](LICENSE).
