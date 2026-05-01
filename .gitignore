@@ -5,3 +5,6 @@ glove80.sublime-project
 glove80.sublime-workspace
 
 .DS_Store
+
+# Local cache for firmware artifacts pulled via `gh run download`
+builds/

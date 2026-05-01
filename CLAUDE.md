@@ -18,8 +18,21 @@ Help the maintainer **maintain, debug, and modify** their fancypants keyboard se
 
 There is no local build target. Two GitHub Actions workflows handle everything:
 
-- `.github/workflows/build.yml` — on every push and via `workflow_dispatch`. Checks out this repo plus `moergo-sc/zmk` at the pinned ref (`v24.02`) into `src/`, then runs `nix-build config -o combined` to produce `glove80.uf2`. The artifact is uploaded as `glove80-<branch>-build-<run>.<attempt>.uf2`. Flash that file to the keyboard.
-- `.github/workflows/draw-keymaps.yml` — on PRs to `main` that touch `config/*.keymap`, `config/*.dtsi`, or `keymap_drawer.config.yaml`. Calls `caksoylar/keymap-drawer`'s reusable workflow, which commits an updated `glove80.svg` and `glove80.yaml` back to the PR branch. Expect those two files to show up in diffs you didn't write.
+- `.github/workflows/build.yml` — `on: [push, workflow_dispatch]`. Checks out this repo plus `moergo-sc/zmk` at the pinned ref (`v24.02`) into `src/`, then runs `nix-build config -o combined` to produce `glove80.uf2`. The artifact is uploaded as `glove80-<branch>-build-<run>.<attempt>.uf2`. Flash that file to the keyboard.
+- `.github/workflows/draw-keymaps.yml` — on `pull_request` to `main` that touches `config/*.keymap`, `config/*.dtsi`, or `keymap_drawer.config.yaml`. Calls `caksoylar/keymap-drawer`'s reusable workflow, which commits an updated `glove80.svg` and `glove80.yaml` back to the PR branch. Expect those two files to show up in diffs you didn't write.
+
+**When does Build actually run?** Two non-obvious points (don't get this wrong — past confusion lives in commit `f05d2ba fix: don't build twice on pull-request open`):
+
+| Event                              | Build?                                                                              |
+| ---------------------------------- | ----------------------------------------------------------------------------------- |
+| Push to a feature branch           | ✅                                                                                   |
+| PR opened / synchronized           | ❌ — `pull_request` was intentionally removed from `build.yml` to stop double-builds |
+| `keymap-drawer render` auto-commit | ❌ — pushed by `GITHUB_TOKEN`, which Actions suppresses to prevent loops             |
+| Force-push / amend                 | ✅                                                                                   |
+| Merge to `main`                    | ✅                                                                                   |
+| Annotated tag push                 | ✅                                                                                   |
+
+So a typical feature-branch PR runs **2 Builds total** (initial push + merge). If you ever want a Build on PR open too, re-add `pull_request` to `build.yml`'s `on:`.
 
 If you need to reproduce the firmware build locally, you need Nix and the `moergo-sc/zmk` repo cloned alongside as `src/`; then `nix-build config -o combined`. This is rarely worth doing — push and let CI build.
 
