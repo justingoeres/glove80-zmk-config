@@ -2,9 +2,11 @@
 
 ## TL;DR
 
-Updating "the firmware" on this Glove80 is a **one-line change** to `.github/workflows/build.yml` — bump the `ref:` of the `moergo-sc/zmk` checkout to a newer release tag. It is **not** a `git merge` from any other repo.
+Updating "the firmware" on this Glove80 is **at minimum** a one-line change to `.github/workflows/build.yml` — bump the `ref:` of the `moergo-sc/zmk` checkout to a newer release tag. It is **not** a `git merge` from any other repo.
 
-This works because: this is a *config* repo — the firmware itself lives in a separate repo (`moergo-sc/zmk`) and is fetched at build time. There's nothing to merge, nothing to rebase, no upstream conflicts. Bump the ref, push, flash the resulting `.uf2`, re-pair if needed, done.
+⚠ **It is sometimes also a small change to `config/default.nix`.** Major ZMK version jumps occasionally rename or re-shape the Nix functions exported from `moergo-sc/zmk`'s top-level `default.nix`. Plan for needing to update one or two lines of `default.nix` alongside the `build.yml` ref bump. See "Nix interface drift across versions" below for the running tally.
+
+This works because: this is a *config* repo — the firmware itself lives in a separate repo (`moergo-sc/zmk`) and is fetched at build time. There's nothing to merge, nothing to rebase, no upstream conflicts. Bump the ref, fix any Nix-interface breakage, push, flash the resulting `.uf2`, re-pair if needed, done.
 
 ## "Are we forked from the glove80 repo?" — No, but close
 
@@ -133,6 +135,28 @@ Worth noting before you ever consider syncing `build.yml` from upstream — this
 - Uploads `glove80.svg` alongside the firmware — useful for at-a-glance review.
 
 Don't accidentally lose any of that by bulk-overwriting `build.yml` from upstream. If you ever do sync, do it as a per-line cherry-pick.
+
+## Nix interface drift across versions
+
+`config/default.nix` calls into the Nix functions exported by `moergo-sc/zmk`'s top-level `default.nix`. Those functions are **not a stable API** — they get reshaped between major versions. Each row below documents an observed signature change. **Check this table whenever you bump `ref:` and don't expect `default.nix` to compile against the new version untouched.**
+
+| `moergo-sc/zmk` versions                    | `combine_uf2` signature                                                                              | How `config/default.nix` calls it                                     |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `v23.x` … `v24.02` (`v24.08-beta.1`)        | `a -> b -> derivation` (output filename hardcoded to `glove80.uf2`)                                  | `firmware.combine_uf2 left right`                                     |
+| `v25.01` … `v25.11` (current latest stable) | `a -> b -> name -> derivation` (output filename `${name}.uf2`)                                       | `firmware.combine_uf2 left right "glove80"`                           |
+| `main` (post-v25.11, as of 2026-05)         | `a -> b -> attrset` where the attrset has a `combine` function: `attrset.combine name -> derivation` | `(firmware.combine_uf2 left right).combine "glove80"` (untested here) |
+
+When the v24.02 → v25.01 bump landed in this repo, the `build.yml`-only ref bump produced this CI error:
+
+```
+error: expression does not evaluate to a derivation (or a set or list of those)
+```
+
+That error means: the Nix expression returned a partially-applied function rather than a derivation, because `combine_uf2` now expects a third argument the call site wasn't passing. The fix was a one-character change in `config/default.nix` (adding `"glove80"` as a third positional arg). Total bump diff for that version pair: 2 lines across 2 files.
+
+If a future bump errors with the same "does not evaluate to a derivation" message, **first** check `moergo-sc/zmk@<new-tag>:default.nix` and compare the relevant function signatures to the table above; **don't** start digging into the keymap or kconfig.
+
+Notably, **upstream's `moergo-sc/glove80-zmk-config` template's `default.nix` still calls with two args**, meaning their CI is probably also broken against current `moergo-sc/zmk@main`. Don't treat upstream as a working reference for the latest firmware — they may simply not have built lately. Their last green Build run was 2025-05-27 (at time of writing).
 
 ## Sources
 
