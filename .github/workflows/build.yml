@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: moergo-sc/zmk
-          ref: v24.02
+          ref: v25.01
           path: src
       - uses: cachix/install-nix-action@v27
         with:
